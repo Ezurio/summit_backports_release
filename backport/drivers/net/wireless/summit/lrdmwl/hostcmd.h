@@ -1168,17 +1168,17 @@ struct hostcmd_cmd_quiet_mode {
 
 struct hostcmd_cmd_dump_otp_data {
 	struct hostcmd_header cmd_hdr;
-	u8 pload[0];
+	u8 pload[];
 } __packed;
 
 struct hostcmd_cmd_pre_scan {
 	struct hostcmd_header cmd_hdr;
-	u8 pload[0];
+	u8 pload[];
 } __packed;
 
 struct hostcmd_cmd_post_scan {
 	struct hostcmd_header cmd_hdr;
-	u8 pload[0];
+	u8 pload[];
 } __packed;
 
 struct hostcmd_cmd_monitor_mode {

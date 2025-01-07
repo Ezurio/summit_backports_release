@@ -414,7 +414,7 @@ typedef struct ww_pwr_entry
 	u8     cc[2];
 	__le16 rc;
 	__le32 len;
-	u8     data[0];
+	u8     data[];
 } ww_pwr_entry_t;
 
 #pragma pack(pop)

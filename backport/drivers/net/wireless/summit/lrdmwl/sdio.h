@@ -394,7 +394,7 @@ struct mwifiex_sdio_mpa_rx {
 
 struct mwl_host_event_mac_t {
 	u16	event_id;
-	u8	payload[0];
+	u8	payload[];
 };
 struct mwl_ibss_lastBcn_payload {
 	u16 event;
