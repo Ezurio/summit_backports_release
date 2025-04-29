@@ -1,0 +1,126 @@
+include $(BACKPORT_DIR)/versions
+export BACKPORTS_VERSION BACKPORTED_KERNEL_VERSION BACKPORTED_KERNEL_VERSION_CODE BACKPORTED_KERNEL_NAME
+
+ifdef BACKPORTS_GIT_TRACKED
+export BACKPORTS_GIT_TRACKER_DEF=-DBACKPORTS_GIT_TRACKED=\"$(BACKPORTS_GIT_TRACKED)\"
+else # BACKPORTS_GIT_TRACKED
+export BACKPORTS_GIT_TRACKER_DEF=
+endif # BACKPORTS_GIT_TRACKED
+
+# Since 2.6.21, try-run is available, but cc-disable-warning
+# was only added later, so we add it here ourselves:
+ifndef cc-disable-warning
+cc-disable-warning = $(call try-run,\
+	$(CC) $(KBUILD_CPPFLAGS) $(KBUILD_CFLAGS) -W$(strip $(1)) -c -x c /dev/null -o "$$TMP",-Wno-$(strip $(1)))
+endif # cc-disable-warning
+
+ifeq ($(CONFIG_BACKPORT_INTEGRATE),)
+
+NOSTDINC_FLAGS += \
+	-I$(M)/backport-include/ \
+	-I$(M)/backport-include/uapi \
+	-I$(M)/include/ \
+	-I$(M)/include/uapi \
+	-include $(M)/backport-include/backport/backport.h \
+	-DCPTCFG_VERSION=\"$(BACKPORTS_VERSION)\" \
+	-DCPTCFG_KERNEL_VERSION=\"$(BACKPORTED_KERNEL_VERSION)\" \
+	-DCPTCFG_KERNEL_VERSION_CODE=$(BACKPORTED_KERNEL_VERSION_CODE) \
+	-DCPTCFG_KERNEL_NAME=\"$(BACKPORTED_KERNEL_NAME)\" \
+	-DCPTCFG_VERSION_KERNEL=$(VERSION) \
+	-DCPTCFG_VERSION_PATCHLEVEL=$(PATCHLEVEL) \
+	-DCPTCFG_VERSION_SUBLEVEL=$(SUBLEVEL) \
+	$(BACKPORTS_GIT_TRACKER_DEF) \
+	$(CFLAGS)
+
+export backport_srctree = $(M)
+
+else # CONFIG_BACKPORT_INTEGRATE
+
+export BACKPORT_DIR = backports/
+export backport_srctree = $(BACKPORT_DIR)
+NOSTDINC_FLAGS += \
+	-I$(BACKPORT_DIR)/backport-include/ \
+	-I$(BACKPORT_DIR)/backport-include/uapi \
+	-I$(BACKPORT_DIR)/include/ \
+	-I$(BACKPORT_DIR)/include/uapi \
+	-include $(BACKPORT_DIR)/backport-include/backport/backport.h \
+	-DCPTCFG_VERSION_KERNEL=$(VERSION) \
+	-DCPTCFG_VERSION_PATCHLEVEL=$(PATCHLEVEL) \
+	-DCPTCFG_VERSION_SUBLEVEL=$(SUBLEVEL) \
+	$(CFLAGS)
+
+endif # CONFIG_BACKPORT_INTEGRATE
+
+# Disabled warnings from kernel Makefile, and some extra ones
+CC_FLAGS_EXTRA = \
+	$(call cc-disable-warning, format-truncation) \
+	$(call cc-disable-warning, format-overflow) \
+	$(call cc-disable-warning, address-of-packed-member) \
+	$(call cc-disable-warning, packed-not-aligned) \
+	$(call cc-disable-warning, unused-const-variable) \
+	$(call cc-disable-warning, unused-function) \
+	$(call cc-disable-warning, unused-but-set-variable) \
+	$(call cc-disable-warning, dangling-pointer) \
+	$(call cc-disable-warning, array-bounds) \
+	$(call cc-disable-warning, pointer-sign) \
+	$(call cc-disable-warning, stringop-truncation) \
+	$(call cc-disable-warning, stringop-overflow) \
+	$(call cc-disable-warning, restrict) \
+	$(call cc-disable-warning, maybe-uninitialized)
+
+# Add workarounds for kernels 2.x 3.x 4.x
+ifneq ($(filter $(VERSION),2 3 4),)
+
+# Support regression testing
+#   gcc 5.x and older have -no-pie as default
+#   old kernels don't have -no-pie set
+#   so add it here, if missing
+ifeq ($(filter -no-pie -fno-pie -fno-PIE -no-PIE,$(KBUILD_CFLAGS)),)
+# Workaround for kernel circular dependencies
+CC_PIE := $(call cc-option, -no-pie) $(call cc-option, -fno-pie)
+KBUILD_CFLAGS += $(CC_PIE)
+endif # no-pie
+
+# See https://github.com/scylladb/dpdk/issues/5
+# Disable -Wattributes for gcc 8.0 and later
+CC_FLAGS_EXTRA += $(call cc-ifversion, -ge, 0800, $(call cc-disable-warning, attributes))
+
+# fentry not propagated to modules on some old kernels
+ifdef CONFIG_HAVE_FENTRY
+ifeq ($(findstring -mfentry,$(KBUILD_CFLAGS)),)
+CC_FLAGS_EXTRA += $(call cc-option, -mfentry -DCC_USING_FENTRY)
+endif
+endif # CONFIG_HAVE_FENTRY
+
+# stack protector not propagated to modules on some old kernels
+ifeq ($(findstring stack-protector,$(KBUILD_CFLAGS)),)
+CC_FLAGS_EXTRA +=  $(call cc-option, -fno-stack-protector)
+endif # stack-protector
+
+endif # 2.x 3.x 4.x
+
+# Workaround for kernel circular dependencies
+CC_FLAGS_EXTRA := $(CC_FLAGS_EXTRA)
+
+# Apply extra flags
+subdir-ccflags-y += $(CC_FLAGS_EXTRA)
+
+obj-y += compat/
+
+obj-$(CPTCFG_CFG80211) += net/wireless/
+obj-$(CPTCFG_MAC80211) += net/mac80211/
+obj-$(CPTCFG_QRTR) += net/qrtr/
+obj-$(CPTCFG_QCOM_QMI_HELPERS) += drivers/soc/qcom/
+obj-$(CPTCFG_MHI_BUS) += drivers/bus/mhi/
+obj-$(CPTCFG_WLAN) += drivers/net/wireless/
+obj-$(CPTCFG_BT) += net/bluetooth/
+obj-$(CPTCFG_BT) += drivers/bluetooth/
+obj-y += drivers/bluetooth/android/
+obj-$(CPTCFG_SSB) += drivers/ssb/
+obj-$(CPTCFG_BCMA) += drivers/bcma/
+obj-$(CPTCFG_USB_NET_RNDIS_WLAN) += drivers/net/usb/
+
+obj-$(CPTCFG_USB_WDM) += drivers/usb/class/
+obj-$(CPTCFG_USB_USBNET) += drivers/net/usb/
+
+obj-$(CPTCFG_STAGING) += drivers/staging/
