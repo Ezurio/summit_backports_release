@@ -1,0 +1,2010 @@
+config BACKPORTED_BACKPORT_DIR
+	tristate
+	default BACKPORT_DIR
+config BACKPORTED_BACKPORTS_VERSION
+	tristate
+	default BACKPORTS_VERSION
+config BACKPORTED_BACKPORTED_KERNEL_VERSION
+	tristate
+	default BACKPORTED_KERNEL_VERSION
+config BACKPORTED_BACKPORTED_KERNEL_VERSION_CODE
+	tristate
+	default BACKPORTED_KERNEL_VERSION_CODE
+config BACKPORTED_BACKPORTED_KERNEL_NAME
+	tristate
+	default BACKPORTED_KERNEL_NAME
+config BACKPORTED_WIRELESS
+	tristate
+	default WIRELESS
+config BACKPORTED_NET_CORE
+	tristate
+	default NET_CORE
+config BACKPORTED_EXPERT
+	tristate
+	default EXPERT
+config BACKPORTED_KUNIT
+	tristate
+	default KUNIT
+config BACKPORTED_BP_MODULES
+	tristate
+	default BP_MODULES
+config BACKPORTED_BPAUTO_BUILD_NLATTR
+	tristate
+	default BPAUTO_BUILD_NLATTR
+config BACKPORTED_BPAUTO_BUILD_CORDIC
+	tristate
+	default BPAUTO_BUILD_CORDIC
+config BACKPORTED_BPAUTO_CORDIC
+	tristate
+	default BPAUTO_CORDIC
+config BACKPORTED_BPAUTO_USERSEL_BUILD_ALL
+	tristate
+	default BPAUTO_USERSEL_BUILD_ALL
+config BACKPORTED_BPAUTO_WANT_DEV_COREDUMP
+	tristate
+	default BPAUTO_WANT_DEV_COREDUMP
+config BACKPORTED_BPAUTO_BUILD_WANT_DEV_COREDUMP
+	tristate
+	default BPAUTO_BUILD_WANT_DEV_COREDUMP
+config BACKPORTED_BPAUTO_RHASHTABLE
+	tristate
+	default BPAUTO_RHASHTABLE
+config BACKPORTED_BPAUTO_REFCOUNT
+	tristate
+	default BPAUTO_REFCOUNT
+config BACKPORTED_BPAUTO_SYSTEM_DATA_VERIFICATION
+	tristate
+	default BPAUTO_SYSTEM_DATA_VERIFICATION
+config BACKPORTED_BPAUTO_BUILD_SYSTEM_DATA_VERIFICATION
+	tristate
+	default BPAUTO_BUILD_SYSTEM_DATA_VERIFICATION
+config BACKPORTED_X509_CERTIFICATE_LOADER
+	tristate
+	default X509_CERTIFICATE_LOADER
+config BACKPORTED_BPAUTO_PUBLIC_KEY
+	tristate
+	default BPAUTO_PUBLIC_KEY
+config BACKPORTED_BPAUTO_ASN1_DECODER
+	tristate
+	default BPAUTO_ASN1_DECODER
+config BACKPORTED_BPAUTO_PKCS7
+	tristate
+	default BPAUTO_PKCS7
+config BACKPORTED_BPAUTO_CRYPTO_LIB_ARC4
+	tristate
+	default BPAUTO_CRYPTO_LIB_ARC4
+config BACKPORTED_BPAUTO_BUILD_CRYPTO_LIB_ARC4
+	tristate
+	default BPAUTO_BUILD_CRYPTO_LIB_ARC4
+config BACKPORTED_BPAUTO_CRYPTO_CMAC
+	tristate
+	default BPAUTO_CRYPTO_CMAC
+config BACKPORTED_BPAUTO_BUILD_CRYPTO_CMAC
+	tristate
+	default BPAUTO_BUILD_CRYPTO_CMAC
+config BACKPORTED_BPAUTO_CRYPTO_ECDH
+	tristate
+	default BPAUTO_CRYPTO_ECDH
+config BACKPORTED_BPAUTO_BUILD_CRYPTO_ECDH
+	tristate
+	default BPAUTO_BUILD_CRYPTO_ECDH
+config BACKPORTED_BPAUTO_CRYPTO_SKCIPHER
+	tristate
+	default BPAUTO_CRYPTO_SKCIPHER
+config BACKPORTED_WIRELESS_EXT
+	tristate
+	default WIRELESS_EXT
+config BACKPORTED_WEXT_CORE
+	tristate
+	default WEXT_CORE
+config BACKPORTED_WEXT_PROC
+	tristate
+	default WEXT_PROC
+config BACKPORTED_WEXT_SPY
+	tristate
+	default WEXT_SPY
+config BACKPORTED_WEXT_PRIV
+	tristate
+	default WEXT_PRIV
+config BACKPORTED_CFG80211
+	tristate
+	default CFG80211
+config BACKPORTED_NL80211_TESTMODE
+	tristate
+	default NL80211_TESTMODE
+config BACKPORTED_CFG80211_DEVELOPER_WARNINGS
+	tristate
+	default CFG80211_DEVELOPER_WARNINGS
+config BACKPORTED_CFG80211_CERTIFICATION_ONUS
+	tristate
+	default CFG80211_CERTIFICATION_ONUS
+config BACKPORTED_CFG80211_REQUIRE_SIGNED_REGDB
+	tristate
+	default CFG80211_REQUIRE_SIGNED_REGDB
+config BACKPORTED_CFG80211_USE_KERNEL_REGDB_KEYS
+	tristate
+	default CFG80211_USE_KERNEL_REGDB_KEYS
+config BACKPORTED_CFG80211_EXTRA_REGDB_KEYDIR
+	tristate
+	default CFG80211_EXTRA_REGDB_KEYDIR
+config BACKPORTED_CFG80211_REG_CELLULAR_HINTS
+	tristate
+	default CFG80211_REG_CELLULAR_HINTS
+config BACKPORTED_CFG80211_REG_RELAX_NO_IR
+	tristate
+	default CFG80211_REG_RELAX_NO_IR
+config BACKPORTED_CFG80211_DEFAULT_PS
+	tristate
+	default CFG80211_DEFAULT_PS
+config BACKPORTED_CFG80211_DEBUGFS
+	tristate
+	default CFG80211_DEBUGFS
+config BACKPORTED_CFG80211_CRDA_SUPPORT
+	tristate
+	default CFG80211_CRDA_SUPPORT
+config BACKPORTED_CFG80211_WEXT
+	tristate
+	default CFG80211_WEXT
+config BACKPORTED_CFG80211_WEXT_EXPORT
+	tristate
+	default CFG80211_WEXT_EXPORT
+config BACKPORTED_CFG80211_KUNIT_TEST
+	tristate
+	default CFG80211_KUNIT_TEST
+config BACKPORTED_LIB80211
+	tristate
+	default LIB80211
+config BACKPORTED_LIB80211_CRYPT_WEP
+	tristate
+	default LIB80211_CRYPT_WEP
+config BACKPORTED_LIB80211_CRYPT_CCMP
+	tristate
+	default LIB80211_CRYPT_CCMP
+config BACKPORTED_LIB80211_CRYPT_TKIP
+	tristate
+	default LIB80211_CRYPT_TKIP
+config BACKPORTED_LIB80211_DEBUG
+	tristate
+	default LIB80211_DEBUG
+config BACKPORTED_MAC80211
+	tristate
+	default MAC80211
+config BACKPORTED_MAC80211_HAS_RC
+	tristate
+	default MAC80211_HAS_RC
+config BACKPORTED_MAC80211_RC_MINSTREL
+	tristate
+	default MAC80211_RC_MINSTREL
+config BACKPORTED_MAC80211_RC_DEFAULT_MINSTREL
+	tristate
+	default MAC80211_RC_DEFAULT_MINSTREL
+config BACKPORTED_MAC80211_RC_DEFAULT
+	tristate
+	default MAC80211_RC_DEFAULT
+config BACKPORTED_MAC80211_KUNIT_TEST
+	tristate
+	default MAC80211_KUNIT_TEST
+config BACKPORTED_MAC80211_MESH
+	tristate
+	default MAC80211_MESH
+config BACKPORTED_MAC80211_LEDS
+	tristate
+	default MAC80211_LEDS
+config BACKPORTED_MAC80211_DEBUGFS
+	tristate
+	default MAC80211_DEBUGFS
+config BACKPORTED_MAC80211_MESSAGE_TRACING
+	tristate
+	default MAC80211_MESSAGE_TRACING
+config BACKPORTED_MAC80211_DEBUG_MENU
+	tristate
+	default MAC80211_DEBUG_MENU
+config BACKPORTED_MAC80211_NOINLINE
+	tristate
+	default MAC80211_NOINLINE
+config BACKPORTED_MAC80211_VERBOSE_DEBUG
+	tristate
+	default MAC80211_VERBOSE_DEBUG
+config BACKPORTED_MAC80211_MLME_DEBUG
+	tristate
+	default MAC80211_MLME_DEBUG
+config BACKPORTED_MAC80211_STA_DEBUG
+	tristate
+	default MAC80211_STA_DEBUG
+config BACKPORTED_MAC80211_HT_DEBUG
+	tristate
+	default MAC80211_HT_DEBUG
+config BACKPORTED_MAC80211_OCB_DEBUG
+	tristate
+	default MAC80211_OCB_DEBUG
+config BACKPORTED_MAC80211_IBSS_DEBUG
+	tristate
+	default MAC80211_IBSS_DEBUG
+config BACKPORTED_MAC80211_PS_DEBUG
+	tristate
+	default MAC80211_PS_DEBUG
+config BACKPORTED_MAC80211_MPL_DEBUG
+	tristate
+	default MAC80211_MPL_DEBUG
+config BACKPORTED_MAC80211_MPATH_DEBUG
+	tristate
+	default MAC80211_MPATH_DEBUG
+config BACKPORTED_MAC80211_MHWMP_DEBUG
+	tristate
+	default MAC80211_MHWMP_DEBUG
+config BACKPORTED_MAC80211_MESH_SYNC_DEBUG
+	tristate
+	default MAC80211_MESH_SYNC_DEBUG
+config BACKPORTED_MAC80211_MESH_CSA_DEBUG
+	tristate
+	default MAC80211_MESH_CSA_DEBUG
+config BACKPORTED_MAC80211_MESH_PS_DEBUG
+	tristate
+	default MAC80211_MESH_PS_DEBUG
+config BACKPORTED_MAC80211_TDLS_DEBUG
+	tristate
+	default MAC80211_TDLS_DEBUG
+config BACKPORTED_MAC80211_DEBUG_COUNTERS
+	tristate
+	default MAC80211_DEBUG_COUNTERS
+config BACKPORTED_MAC80211_STA_HASH_MAX_SIZE
+	tristate
+	default MAC80211_STA_HASH_MAX_SIZE
+config BACKPORTED_BT
+	tristate
+	default BT
+config BACKPORTED_BT_BREDR
+	tristate
+	default BT_BREDR
+config BACKPORTED_BT_LE
+	tristate
+	default BT_LE
+config BACKPORTED_BT_LE_L2CAP_ECRED
+	tristate
+	default BT_LE_L2CAP_ECRED
+config BACKPORTED_BT_6LOWPAN
+	tristate
+	default BT_6LOWPAN
+config BACKPORTED_BT_LEDS
+	tristate
+	default BT_LEDS
+config BACKPORTED_BT_MSFTEXT
+	tristate
+	default BT_MSFTEXT
+config BACKPORTED_BT_AOSPEXT
+	tristate
+	default BT_AOSPEXT
+config BACKPORTED_BT_DEBUGFS
+	tristate
+	default BT_DEBUGFS
+config BACKPORTED_BT_SELFTEST
+	tristate
+	default BT_SELFTEST
+config BACKPORTED_BT_SELFTEST_ECDH
+	tristate
+	default BT_SELFTEST_ECDH
+config BACKPORTED_BT_SELFTEST_SMP
+	tristate
+	default BT_SELFTEST_SMP
+config BACKPORTED_BT_FEATURE_DEBUG
+	tristate
+	default BT_FEATURE_DEBUG
+config BACKPORTED_BT_RFCOMM
+	tristate
+	default BT_RFCOMM
+config BACKPORTED_BT_RFCOMM_TTY
+	tristate
+	default BT_RFCOMM_TTY
+config BACKPORTED_BT_BNEP
+	tristate
+	default BT_BNEP
+config BACKPORTED_BT_BNEP_MC_FILTER
+	tristate
+	default BT_BNEP_MC_FILTER
+config BACKPORTED_BT_BNEP_PROTO_FILTER
+	tristate
+	default BT_BNEP_PROTO_FILTER
+config BACKPORTED_BT_CMTP
+	tristate
+	default BT_CMTP
+config BACKPORTED_BT_HIDP
+	tristate
+	default BT_HIDP
+config BACKPORTED_BT_INTEL
+	tristate
+	default BT_INTEL
+config BACKPORTED_BT_BCM
+	tristate
+	default BT_BCM
+config BACKPORTED_BT_RTL
+	tristate
+	default BT_RTL
+config BACKPORTED_BT_QCA
+	tristate
+	default BT_QCA
+config BACKPORTED_BT_MTK
+	tristate
+	default BT_MTK
+config BACKPORTED_BT_HCIBTUSB
+	tristate
+	default BT_HCIBTUSB
+config BACKPORTED_BT_HCIBTUSB_AUTOSUSPEND
+	tristate
+	default BT_HCIBTUSB_AUTOSUSPEND
+config BACKPORTED_BT_HCIBTUSB_POLL_SYNC
+	tristate
+	default BT_HCIBTUSB_POLL_SYNC
+config BACKPORTED_BT_HCIBTUSB_BCM
+	tristate
+	default BT_HCIBTUSB_BCM
+config BACKPORTED_BT_HCIBTUSB_INTEL
+	tristate
+	default BT_HCIBTUSB_INTEL
+config BACKPORTED_BT_HCIBTUSB_MTK
+	tristate
+	default BT_HCIBTUSB_MTK
+config BACKPORTED_BT_HCIBTUSB_RTL
+	tristate
+	default BT_HCIBTUSB_RTL
+config BACKPORTED_BT_HCIBTSDIO
+	tristate
+	default BT_HCIBTSDIO
+config BACKPORTED_BT_HCIUART
+	tristate
+	default BT_HCIUART
+config BACKPORTED_BT_HCIUART_SERDEV
+	tristate
+	default BT_HCIUART_SERDEV
+config BACKPORTED_BT_HCIUART_H4
+	tristate
+	default BT_HCIUART_H4
+config BACKPORTED_BT_HCIUART_NOKIA
+	tristate
+	default BT_HCIUART_NOKIA
+config BACKPORTED_BT_HCIUART_BCSP
+	tristate
+	default BT_HCIUART_BCSP
+config BACKPORTED_BT_HCIUART_ATH3K
+	tristate
+	default BT_HCIUART_ATH3K
+config BACKPORTED_BT_HCIUART_LL
+	tristate
+	default BT_HCIUART_LL
+config BACKPORTED_BT_HCIUART_3WIRE
+	tristate
+	default BT_HCIUART_3WIRE
+config BACKPORTED_BT_HCIUART_INTEL
+	tristate
+	default BT_HCIUART_INTEL
+config BACKPORTED_BT_HCIUART_BCM
+	tristate
+	default BT_HCIUART_BCM
+config BACKPORTED_BT_HCIUART_RTL
+	tristate
+	default BT_HCIUART_RTL
+config BACKPORTED_BT_HCIUART_QCA
+	tristate
+	default BT_HCIUART_QCA
+config BACKPORTED_BT_HCIUART_AG6XX
+	tristate
+	default BT_HCIUART_AG6XX
+config BACKPORTED_BT_HCIUART_MRVL
+	tristate
+	default BT_HCIUART_MRVL
+config BACKPORTED_BT_HCIUART_AML
+	tristate
+	default BT_HCIUART_AML
+config BACKPORTED_BT_HCIBCM203X
+	tristate
+	default BT_HCIBCM203X
+config BACKPORTED_BT_HCIBCM4377
+	tristate
+	default BT_HCIBCM4377
+config BACKPORTED_BT_HCIBPA10X
+	tristate
+	default BT_HCIBPA10X
+config BACKPORTED_BT_HCIBFUSB
+	tristate
+	default BT_HCIBFUSB
+config BACKPORTED_BT_HCIDTL1
+	tristate
+	default BT_HCIDTL1
+config BACKPORTED_BT_HCIBT3C
+	tristate
+	default BT_HCIBT3C
+config BACKPORTED_BT_HCIBLUECARD
+	tristate
+	default BT_HCIBLUECARD
+config BACKPORTED_BT_HCISS1USB
+	tristate
+	default BT_HCISS1USB
+config BACKPORTED_BT_HCIBTUART
+	tristate
+	default BT_HCIBTUART
+config BACKPORTED_BT_HCIVHCI
+	tristate
+	default BT_HCIVHCI
+config BACKPORTED_BT_TI
+	tristate
+	default BT_TI
+config BACKPORTED_BT_TI_SDIO
+	tristate
+	default BT_TI_SDIO
+config BACKPORTED_BT_TI_UART
+	tristate
+	default BT_TI_UART
+config BACKPORTED_BT_MRVL
+	tristate
+	default BT_MRVL
+config BACKPORTED_BT_MRVL_SDIO
+	tristate
+	default BT_MRVL_SDIO
+config BACKPORTED_BT_ATH3K
+	tristate
+	default BT_ATH3K
+config BACKPORTED_BT_MTKSDIO
+	tristate
+	default BT_MTKSDIO
+config BACKPORTED_BT_MTKUART
+	tristate
+	default BT_MTKUART
+config BACKPORTED_BT_QCOMSMD
+	tristate
+	default BT_QCOMSMD
+config BACKPORTED_BT_HCIRSI
+	tristate
+	default BT_HCIRSI
+config BACKPORTED_BT_VIRTIO
+	tristate
+	default BT_VIRTIO
+config BACKPORTED_BT_NXPUART
+	tristate
+	default BT_NXPUART
+config BACKPORTED_BT_INTEL_PCIE
+	tristate
+	default BT_INTEL_PCIE
+config BACKPORTED_BT_88W8997_MCHAR_USB
+	tristate
+	default BT_88W8997_MCHAR_USB
+config BACKPORTED_BT_88W8997_MCHAR_SDIO
+	tristate
+	default BT_88W8997_MCHAR_SDIO
+config BACKPORTED_QRTR
+	tristate
+	default QRTR
+config BACKPORTED_QRTR_SMD
+	tristate
+	default QRTR_SMD
+config BACKPORTED_QRTR_TUN
+	tristate
+	default QRTR_TUN
+config BACKPORTED_QRTR_MHI
+	tristate
+	default QRTR_MHI
+config BACKPORTED_MHI_BUS
+	tristate
+	default MHI_BUS
+config BACKPORTED_MHI_BUS_DEBUG
+	tristate
+	default MHI_BUS_DEBUG
+config BACKPORTED_MHI_BUS_PCI_GENERIC
+	tristate
+	default MHI_BUS_PCI_GENERIC
+config BACKPORTED_MHI_BUS_EP
+	tristate
+	default MHI_BUS_EP
+config BACKPORTED_QCOM_AOSS_QMP
+	tristate
+	default QCOM_AOSS_QMP
+config BACKPORTED_QCOM_COMMAND_DB
+	tristate
+	default QCOM_COMMAND_DB
+config BACKPORTED_QCOM_GENI_SE
+	tristate
+	default QCOM_GENI_SE
+config BACKPORTED_QCOM_GSBI
+	tristate
+	default QCOM_GSBI
+config BACKPORTED_QCOM_LLCC
+	tristate
+	default QCOM_LLCC
+config BACKPORTED_QCOM_KRYO_L2_ACCESSORS
+	tristate
+	default QCOM_KRYO_L2_ACCESSORS
+config BACKPORTED_QCOM_MDT_LOADER
+	tristate
+	default QCOM_MDT_LOADER
+config BACKPORTED_QCOM_OCMEM
+	tristate
+	default QCOM_OCMEM
+config BACKPORTED_QCOM_PD_MAPPER
+	tristate
+	default QCOM_PD_MAPPER
+config BACKPORTED_QCOM_PDR_HELPERS
+	tristate
+	default QCOM_PDR_HELPERS
+config BACKPORTED_QCOM_PDR_MSG
+	tristate
+	default QCOM_PDR_MSG
+config BACKPORTED_QCOM_PMIC_PDCHARGER_ULOG
+	tristate
+	default QCOM_PMIC_PDCHARGER_ULOG
+config BACKPORTED_QCOM_PMIC_GLINK
+	tristate
+	default QCOM_PMIC_GLINK
+config BACKPORTED_QCOM_QMI_HELPERS
+	tristate
+	default QCOM_QMI_HELPERS
+config BACKPORTED_QCOM_RAMP_CTRL
+	tristate
+	default QCOM_RAMP_CTRL
+config BACKPORTED_QCOM_RMTFS_MEM
+	tristate
+	default QCOM_RMTFS_MEM
+config BACKPORTED_QCOM_RPM_MASTER_STATS
+	tristate
+	default QCOM_RPM_MASTER_STATS
+config BACKPORTED_QCOM_RPMH
+	tristate
+	default QCOM_RPMH
+config BACKPORTED_QCOM_SMEM
+	tristate
+	default QCOM_SMEM
+config BACKPORTED_QCOM_SMD_RPM
+	tristate
+	default QCOM_SMD_RPM
+config BACKPORTED_QCOM_SMEM_STATE
+	tristate
+	default QCOM_SMEM_STATE
+config BACKPORTED_QCOM_SMP2P
+	tristate
+	default QCOM_SMP2P
+config BACKPORTED_QCOM_SMSM
+	tristate
+	default QCOM_SMSM
+config BACKPORTED_QCOM_SOCINFO
+	tristate
+	default QCOM_SOCINFO
+config BACKPORTED_QCOM_SPM
+	tristate
+	default QCOM_SPM
+config BACKPORTED_QCOM_STATS
+	tristate
+	default QCOM_STATS
+config BACKPORTED_QCOM_WCNSS_CTRL
+	tristate
+	default QCOM_WCNSS_CTRL
+config BACKPORTED_QCOM_APR
+	tristate
+	default QCOM_APR
+config BACKPORTED_QCOM_ICC_BWMON
+	tristate
+	default QCOM_ICC_BWMON
+config BACKPORTED_QCOM_INLINE_CRYPTO_ENGINE
+	tristate
+	default QCOM_INLINE_CRYPTO_ENGINE
+config BACKPORTED_QCOM_PBS
+	tristate
+	default QCOM_PBS
+config BACKPORTED_WLAN
+	tristate
+	default WLAN
+config BACKPORTED_WLAN_VENDOR_ADMTEK
+	tristate
+	default WLAN_VENDOR_ADMTEK
+config BACKPORTED_ADM8211
+	tristate
+	default ADM8211
+config BACKPORTED_ATH_COMMON
+	tristate
+	default ATH_COMMON
+config BACKPORTED_WLAN_VENDOR_ATH
+	tristate
+	default WLAN_VENDOR_ATH
+config BACKPORTED_ATH_DEBUG
+	tristate
+	default ATH_DEBUG
+config BACKPORTED_ATH_TRACEPOINTS
+	tristate
+	default ATH_TRACEPOINTS
+config BACKPORTED_ATH_REG_DYNAMIC_USER_REG_HINTS
+	tristate
+	default ATH_REG_DYNAMIC_USER_REG_HINTS
+config BACKPORTED_ATH_REG_DYNAMIC_USER_CERT_TESTING
+	tristate
+	default ATH_REG_DYNAMIC_USER_CERT_TESTING
+config BACKPORTED_ATH5K
+	tristate
+	default ATH5K
+config BACKPORTED_ATH5K_DEBUG
+	tristate
+	default ATH5K_DEBUG
+config BACKPORTED_ATH5K_TRACER
+	tristate
+	default ATH5K_TRACER
+config BACKPORTED_ATH5K_AHB
+	tristate
+	default ATH5K_AHB
+config BACKPORTED_ATH5K_PCI
+	tristate
+	default ATH5K_PCI
+config BACKPORTED_ATH5K_TEST_CHANNELS
+	tristate
+	default ATH5K_TEST_CHANNELS
+config BACKPORTED_ATH9K_HW
+	tristate
+	default ATH9K_HW
+config BACKPORTED_ATH9K_COMMON
+	tristate
+	default ATH9K_COMMON
+config BACKPORTED_ATH9K_COMMON_DEBUG
+	tristate
+	default ATH9K_COMMON_DEBUG
+config BACKPORTED_ATH9K_DFS_DEBUGFS
+	tristate
+	default ATH9K_DFS_DEBUGFS
+config BACKPORTED_ATH9K_BTCOEX_SUPPORT
+	tristate
+	default ATH9K_BTCOEX_SUPPORT
+config BACKPORTED_ATH9K
+	tristate
+	default ATH9K
+config BACKPORTED_ATH9K_PCI
+	tristate
+	default ATH9K_PCI
+config BACKPORTED_ATH9K_AHB
+	tristate
+	default ATH9K_AHB
+config BACKPORTED_ATH9K_DEBUGFS
+	tristate
+	default ATH9K_DEBUGFS
+config BACKPORTED_ATH9K_STATION_STATISTICS
+	tristate
+	default ATH9K_STATION_STATISTICS
+config BACKPORTED_ATH9K_TX99
+	tristate
+	default ATH9K_TX99
+config BACKPORTED_ATH9K_DFS_CERTIFIED
+	tristate
+	default ATH9K_DFS_CERTIFIED
+config BACKPORTED_ATH9K_DYNACK
+	tristate
+	default ATH9K_DYNACK
+config BACKPORTED_ATH9K_WOW
+	tristate
+	default ATH9K_WOW
+config BACKPORTED_ATH9K_RFKILL
+	tristate
+	default ATH9K_RFKILL
+config BACKPORTED_ATH9K_CHANNEL_CONTEXT
+	tristate
+	default ATH9K_CHANNEL_CONTEXT
+config BACKPORTED_ATH9K_PCOEM
+	tristate
+	default ATH9K_PCOEM
+config BACKPORTED_ATH9K_PCI_NO_EEPROM
+	tristate
+	default ATH9K_PCI_NO_EEPROM
+config BACKPORTED_ATH9K_HTC
+	tristate
+	default ATH9K_HTC
+config BACKPORTED_ATH9K_HTC_DEBUGFS
+	tristate
+	default ATH9K_HTC_DEBUGFS
+config BACKPORTED_ATH9K_HWRNG
+	tristate
+	default ATH9K_HWRNG
+config BACKPORTED_ATH9K_COMMON_SPECTRAL
+	tristate
+	default ATH9K_COMMON_SPECTRAL
+config BACKPORTED_CARL9170
+	tristate
+	default CARL9170
+config BACKPORTED_CARL9170_LEDS
+	tristate
+	default CARL9170_LEDS
+config BACKPORTED_CARL9170_DEBUGFS
+	tristate
+	default CARL9170_DEBUGFS
+config BACKPORTED_CARL9170_WPC
+	tristate
+	default CARL9170_WPC
+config BACKPORTED_CARL9170_HWRNG
+	tristate
+	default CARL9170_HWRNG
+config BACKPORTED_ATH6KL
+	tristate
+	default ATH6KL
+config BACKPORTED_ATH6KL_SDIO
+	tristate
+	default ATH6KL_SDIO
+config BACKPORTED_ATH6KL_USB
+	tristate
+	default ATH6KL_USB
+config BACKPORTED_ATH6KL_DEBUG
+	tristate
+	default ATH6KL_DEBUG
+config BACKPORTED_ATH6KL_TRACING
+	tristate
+	default ATH6KL_TRACING
+config BACKPORTED_ATH6KL_REGDOMAIN
+	tristate
+	default ATH6KL_REGDOMAIN
+config BACKPORTED_ATH6KL_FIPS
+	tristate
+	default ATH6KL_FIPS
+config BACKPORTED_AR5523
+	tristate
+	default AR5523
+config BACKPORTED_WIL6210
+	tristate
+	default WIL6210
+config BACKPORTED_WIL6210_ISR_COR
+	tristate
+	default WIL6210_ISR_COR
+config BACKPORTED_WIL6210_TRACING
+	tristate
+	default WIL6210_TRACING
+config BACKPORTED_WIL6210_DEBUGFS
+	tristate
+	default WIL6210_DEBUGFS
+config BACKPORTED_ATH10K
+	tristate
+	default ATH10K
+config BACKPORTED_ATH10K_CE
+	tristate
+	default ATH10K_CE
+config BACKPORTED_ATH10K_PCI
+	tristate
+	default ATH10K_PCI
+config BACKPORTED_ATH10K_AHB
+	tristate
+	default ATH10K_AHB
+config BACKPORTED_ATH10K_SDIO
+	tristate
+	default ATH10K_SDIO
+config BACKPORTED_ATH10K_USB
+	tristate
+	default ATH10K_USB
+config BACKPORTED_ATH10K_SNOC
+	tristate
+	default ATH10K_SNOC
+config BACKPORTED_ATH10K_DEBUG
+	tristate
+	default ATH10K_DEBUG
+config BACKPORTED_ATH10K_DEBUGFS
+	tristate
+	default ATH10K_DEBUGFS
+config BACKPORTED_ATH10K_LEDS
+	tristate
+	default ATH10K_LEDS
+config BACKPORTED_ATH10K_SPECTRAL
+	tristate
+	default ATH10K_SPECTRAL
+config BACKPORTED_ATH10K_TRACING
+	tristate
+	default ATH10K_TRACING
+config BACKPORTED_ATH10K_DFS_CERTIFIED
+	tristate
+	default ATH10K_DFS_CERTIFIED
+config BACKPORTED_WCN36XX
+	tristate
+	default WCN36XX
+config BACKPORTED_WCN36XX_DEBUGFS
+	tristate
+	default WCN36XX_DEBUGFS
+config BACKPORTED_ATH11K
+	tristate
+	default ATH11K
+config BACKPORTED_ATH11K_AHB
+	tristate
+	default ATH11K_AHB
+config BACKPORTED_ATH11K_PCI
+	tristate
+	default ATH11K_PCI
+config BACKPORTED_ATH11K_DEBUG
+	tristate
+	default ATH11K_DEBUG
+config BACKPORTED_ATH11K_DEBUGFS
+	tristate
+	default ATH11K_DEBUGFS
+config BACKPORTED_ATH11K_TRACING
+	tristate
+	default ATH11K_TRACING
+config BACKPORTED_ATH11K_SPECTRAL
+	tristate
+	default ATH11K_SPECTRAL
+config BACKPORTED_ATH12K
+	tristate
+	default ATH12K
+config BACKPORTED_ATH12K_DEBUG
+	tristate
+	default ATH12K_DEBUG
+config BACKPORTED_ATH12K_DEBUGFS
+	tristate
+	default ATH12K_DEBUGFS
+config BACKPORTED_ATH12K_TRACING
+	tristate
+	default ATH12K_TRACING
+config BACKPORTED_WLAN_VENDOR_ATMEL
+	tristate
+	default WLAN_VENDOR_ATMEL
+config BACKPORTED_AT76C50X_USB
+	tristate
+	default AT76C50X_USB
+config BACKPORTED_WLAN_VENDOR_BROADCOM
+	tristate
+	default WLAN_VENDOR_BROADCOM
+config BACKPORTED_B43
+	tristate
+	default B43
+config BACKPORTED_B43_BCMA
+	tristate
+	default B43_BCMA
+config BACKPORTED_B43_SSB
+	tristate
+	default B43_SSB
+config BACKPORTED_B43_BUSES_BCMA_AND_SSB
+	tristate
+	default B43_BUSES_BCMA_AND_SSB
+config BACKPORTED_B43_BUSES_BCMA
+	tristate
+	default B43_BUSES_BCMA
+config BACKPORTED_B43_BUSES_SSB
+	tristate
+	default B43_BUSES_SSB
+config BACKPORTED_B43_PCI_AUTOSELECT
+	tristate
+	default B43_PCI_AUTOSELECT
+config BACKPORTED_B43_PCICORE_AUTOSELECT
+	tristate
+	default B43_PCICORE_AUTOSELECT
+config BACKPORTED_B43_SDIO
+	tristate
+	default B43_SDIO
+config BACKPORTED_B43_BCMA_PIO
+	tristate
+	default B43_BCMA_PIO
+config BACKPORTED_B43_PIO
+	tristate
+	default B43_PIO
+config BACKPORTED_B43_PHY_G
+	tristate
+	default B43_PHY_G
+config BACKPORTED_B43_PHY_N
+	tristate
+	default B43_PHY_N
+config BACKPORTED_B43_PHY_LP
+	tristate
+	default B43_PHY_LP
+config BACKPORTED_B43_PHY_HT
+	tristate
+	default B43_PHY_HT
+config BACKPORTED_B43_PHY_LCN
+	tristate
+	default B43_PHY_LCN
+config BACKPORTED_B43_PHY_AC
+	tristate
+	default B43_PHY_AC
+config BACKPORTED_B43_LEDS
+	tristate
+	default B43_LEDS
+config BACKPORTED_B43_HWRNG
+	tristate
+	default B43_HWRNG
+config BACKPORTED_B43_DEBUG
+	tristate
+	default B43_DEBUG
+config BACKPORTED_B43LEGACY
+	tristate
+	default B43LEGACY
+config BACKPORTED_B43LEGACY_PCI_AUTOSELECT
+	tristate
+	default B43LEGACY_PCI_AUTOSELECT
+config BACKPORTED_B43LEGACY_PCICORE_AUTOSELECT
+	tristate
+	default B43LEGACY_PCICORE_AUTOSELECT
+config BACKPORTED_B43LEGACY_LEDS
+	tristate
+	default B43LEGACY_LEDS
+config BACKPORTED_B43LEGACY_HWRNG
+	tristate
+	default B43LEGACY_HWRNG
+config BACKPORTED_B43LEGACY_DEBUG
+	tristate
+	default B43LEGACY_DEBUG
+config BACKPORTED_B43LEGACY_DMA
+	tristate
+	default B43LEGACY_DMA
+config BACKPORTED_B43LEGACY_PIO
+	tristate
+	default B43LEGACY_PIO
+config BACKPORTED_B43LEGACY_DMA_AND_PIO_MODE
+	tristate
+	default B43LEGACY_DMA_AND_PIO_MODE
+config BACKPORTED_B43LEGACY_DMA_MODE
+	tristate
+	default B43LEGACY_DMA_MODE
+config BACKPORTED_B43LEGACY_PIO_MODE
+	tristate
+	default B43LEGACY_PIO_MODE
+config BACKPORTED_BRCMUTIL
+	tristate
+	default BRCMUTIL
+config BACKPORTED_BRCMSMAC
+	tristate
+	default BRCMSMAC
+config BACKPORTED_BRCMSMAC_LEDS
+	tristate
+	default BRCMSMAC_LEDS
+config BACKPORTED_BRCM_TRACING
+	tristate
+	default BRCM_TRACING
+config BACKPORTED_BRCMDBG
+	tristate
+	default BRCMDBG
+config BACKPORTED_BRCMFMAC_PCIE_BARWIN_SZ
+	tristate
+	default BRCMFMAC_PCIE_BARWIN_SZ
+config BACKPORTED_BRCMFMAC_BT_SHARED_SDIO
+	tristate
+	default BRCMFMAC_BT_SHARED_SDIO
+config BACKPORTED_BRCMFMAC
+	tristate
+	default BRCMFMAC
+config BACKPORTED_BRCMFMAC_PROTO_BCDC
+	tristate
+	default BRCMFMAC_PROTO_BCDC
+config BACKPORTED_BRCMFMAC_PROTO_MSGBUF
+	tristate
+	default BRCMFMAC_PROTO_MSGBUF
+config BACKPORTED_BRCMFMAC_SDIO
+	tristate
+	default BRCMFMAC_SDIO
+config BACKPORTED_BRCMFMAC_USB
+	tristate
+	default BRCMFMAC_USB
+config BACKPORTED_BRCMFMAC_PCIE
+	tristate
+	default BRCMFMAC_PCIE
+config BACKPORTED_BRCMFMAC_BT_SHARED_SDIO
+	tristate
+	default BRCMFMAC_BT_SHARED_SDIO
+config BACKPORTED_INFFMAC_BT_SHARED_SDIO
+	tristate
+	default INFFMAC_BT_SHARED_SDIO
+config BACKPORTED_WLAN_VENDOR_INTEL
+	tristate
+	default WLAN_VENDOR_INTEL
+config BACKPORTED_IPW2100
+	tristate
+	default IPW2100
+config BACKPORTED_IPW2100_MONITOR
+	tristate
+	default IPW2100_MONITOR
+config BACKPORTED_IPW2100_DEBUG
+	tristate
+	default IPW2100_DEBUG
+config BACKPORTED_IPW2200
+	tristate
+	default IPW2200
+config BACKPORTED_IPW2200_MONITOR
+	tristate
+	default IPW2200_MONITOR
+config BACKPORTED_IPW2200_RADIOTAP
+	tristate
+	default IPW2200_RADIOTAP
+config BACKPORTED_IPW2200_PROMISCUOUS
+	tristate
+	default IPW2200_PROMISCUOUS
+config BACKPORTED_IPW2200_QOS
+	tristate
+	default IPW2200_QOS
+config BACKPORTED_IPW2200_DEBUG
+	tristate
+	default IPW2200_DEBUG
+config BACKPORTED_LIBIPW
+	tristate
+	default LIBIPW
+config BACKPORTED_LIBIPW_DEBUG
+	tristate
+	default LIBIPW_DEBUG
+config BACKPORTED_IWLEGACY
+	tristate
+	default IWLEGACY
+config BACKPORTED_IWL4965
+	tristate
+	default IWL4965
+config BACKPORTED_IWL3945
+	tristate
+	default IWL3945
+config BACKPORTED_IWLEGACY_DEBUG
+	tristate
+	default IWLEGACY_DEBUG
+config BACKPORTED_IWLEGACY_DEBUGFS
+	tristate
+	default IWLEGACY_DEBUGFS
+config BACKPORTED_IWLWIFI
+	tristate
+	default IWLWIFI
+config BACKPORTED_IWLWIFI_KUNIT_TESTS
+	tristate
+	default IWLWIFI_KUNIT_TESTS
+config BACKPORTED_IWLWIFI_LEDS
+	tristate
+	default IWLWIFI_LEDS
+config BACKPORTED_IWLDVM
+	tristate
+	default IWLDVM
+config BACKPORTED_IWLMVM
+	tristate
+	default IWLMVM
+config BACKPORTED_IWLWIFI_OPMODE_MODULAR
+	tristate
+	default IWLWIFI_OPMODE_MODULAR
+config BACKPORTED_IWLWIFI_DEBUG
+	tristate
+	default IWLWIFI_DEBUG
+config BACKPORTED_IWLWIFI_DEBUGFS
+	tristate
+	default IWLWIFI_DEBUGFS
+config BACKPORTED_IWLWIFI_DEVICE_TRACING
+	tristate
+	default IWLWIFI_DEVICE_TRACING
+config BACKPORTED_IWLMEI
+	tristate
+	default IWLMEI
+config BACKPORTED_WLAN_VENDOR_INTERSIL
+	tristate
+	default WLAN_VENDOR_INTERSIL
+config BACKPORTED_P54_COMMON
+	tristate
+	default P54_COMMON
+config BACKPORTED_P54_USB
+	tristate
+	default P54_USB
+config BACKPORTED_P54_PCI
+	tristate
+	default P54_PCI
+config BACKPORTED_P54_SPI
+	tristate
+	default P54_SPI
+config BACKPORTED_P54_SPI_DEFAULT_EEPROM
+	tristate
+	default P54_SPI_DEFAULT_EEPROM
+config BACKPORTED_P54_LEDS
+	tristate
+	default P54_LEDS
+config BACKPORTED_WLAN_VENDOR_MARVELL
+	tristate
+	default WLAN_VENDOR_MARVELL
+config BACKPORTED_MWL8K
+	tristate
+	default MWL8K
+config BACKPORTED_LIBERTAS
+	tristate
+	default LIBERTAS
+config BACKPORTED_LIBERTAS_USB
+	tristate
+	default LIBERTAS_USB
+config BACKPORTED_LIBERTAS_SDIO
+	tristate
+	default LIBERTAS_SDIO
+config BACKPORTED_LIBERTAS_SPI
+	tristate
+	default LIBERTAS_SPI
+config BACKPORTED_LIBERTAS_DEBUG
+	tristate
+	default LIBERTAS_DEBUG
+config BACKPORTED_LIBERTAS_MESH
+	tristate
+	default LIBERTAS_MESH
+config BACKPORTED_LIBERTAS_THINFIRM
+	tristate
+	default LIBERTAS_THINFIRM
+config BACKPORTED_LIBERTAS_THINFIRM_DEBUG
+	tristate
+	default LIBERTAS_THINFIRM_DEBUG
+config BACKPORTED_LIBERTAS_THINFIRM_USB
+	tristate
+	default LIBERTAS_THINFIRM_USB
+config BACKPORTED_MWIFIEX
+	tristate
+	default MWIFIEX
+config BACKPORTED_MWIFIEX_SDIO
+	tristate
+	default MWIFIEX_SDIO
+config BACKPORTED_MWIFIEX_PCIE
+	tristate
+	default MWIFIEX_PCIE
+config BACKPORTED_MWIFIEX_USB
+	tristate
+	default MWIFIEX_USB
+config BACKPORTED_WLAN_VENDOR_MEDIATEK
+	tristate
+	default WLAN_VENDOR_MEDIATEK
+config BACKPORTED_MT7601U
+	tristate
+	default MT7601U
+config BACKPORTED_MT76_CORE
+	tristate
+	default MT76_CORE
+config BACKPORTED_MT76_LEDS
+	tristate
+	default MT76_LEDS
+config BACKPORTED_MT76_USB
+	tristate
+	default MT76_USB
+config BACKPORTED_MT76_SDIO
+	tristate
+	default MT76_SDIO
+config BACKPORTED_MT76x02_LIB
+	tristate
+	default MT76x02_LIB
+config BACKPORTED_MT76x02_USB
+	tristate
+	default MT76x02_USB
+config BACKPORTED_MT76_CONNAC_LIB
+	tristate
+	default MT76_CONNAC_LIB
+config BACKPORTED_MT792x_LIB
+	tristate
+	default MT792x_LIB
+config BACKPORTED_MT792x_USB
+	tristate
+	default MT792x_USB
+config BACKPORTED_MT76x0_COMMON
+	tristate
+	default MT76x0_COMMON
+config BACKPORTED_MT76x0U
+	tristate
+	default MT76x0U
+config BACKPORTED_MT76x0E
+	tristate
+	default MT76x0E
+config BACKPORTED_MT76x2_COMMON
+	tristate
+	default MT76x2_COMMON
+config BACKPORTED_MT76x2E
+	tristate
+	default MT76x2E
+config BACKPORTED_MT76x2U
+	tristate
+	default MT76x2U
+config BACKPORTED_MT7603E
+	tristate
+	default MT7603E
+config BACKPORTED_MT7615_COMMON
+	tristate
+	default MT7615_COMMON
+config BACKPORTED_MT7615E
+	tristate
+	default MT7615E
+config BACKPORTED_MT7622_WMAC
+	tristate
+	default MT7622_WMAC
+config BACKPORTED_MT7663_USB_SDIO_COMMON
+	tristate
+	default MT7663_USB_SDIO_COMMON
+config BACKPORTED_MT7663U
+	tristate
+	default MT7663U
+config BACKPORTED_MT7663S
+	tristate
+	default MT7663S
+config BACKPORTED_MT7915E
+	tristate
+	default MT7915E
+config BACKPORTED_MT798X_WMAC
+	tristate
+	default MT798X_WMAC
+config BACKPORTED_MT7921_COMMON
+	tristate
+	default MT7921_COMMON
+config BACKPORTED_MT7921E
+	tristate
+	default MT7921E
+config BACKPORTED_MT7921S
+	tristate
+	default MT7921S
+config BACKPORTED_MT7921U
+	tristate
+	default MT7921U
+config BACKPORTED_MT7996E
+	tristate
+	default MT7996E
+config BACKPORTED_MT7925_COMMON
+	tristate
+	default MT7925_COMMON
+config BACKPORTED_MT7925E
+	tristate
+	default MT7925E
+config BACKPORTED_MT7925U
+	tristate
+	default MT7925U
+config BACKPORTED_WLAN_VENDOR_MICROCHIP
+	tristate
+	default WLAN_VENDOR_MICROCHIP
+config BACKPORTED_WILC1000
+	tristate
+	default WILC1000
+config BACKPORTED_WILC1000_SDIO
+	tristate
+	default WILC1000_SDIO
+config BACKPORTED_WILC1000_SPI
+	tristate
+	default WILC1000_SPI
+config BACKPORTED_WILC1000_HW_OOB_INTR
+	tristate
+	default WILC1000_HW_OOB_INTR
+config BACKPORTED_WLAN_VENDOR_RALINK
+	tristate
+	default WLAN_VENDOR_RALINK
+config BACKPORTED_RT2X00
+	tristate
+	default RT2X00
+config BACKPORTED_RT2400PCI
+	tristate
+	default RT2400PCI
+config BACKPORTED_RT2500PCI
+	tristate
+	default RT2500PCI
+config BACKPORTED_RT61PCI
+	tristate
+	default RT61PCI
+config BACKPORTED_RT2800PCI
+	tristate
+	default RT2800PCI
+config BACKPORTED_RT2800PCI_RT33XX
+	tristate
+	default RT2800PCI_RT33XX
+config BACKPORTED_RT2800PCI_RT35XX
+	tristate
+	default RT2800PCI_RT35XX
+config BACKPORTED_RT2800PCI_RT53XX
+	tristate
+	default RT2800PCI_RT53XX
+config BACKPORTED_RT2800PCI_RT3290
+	tristate
+	default RT2800PCI_RT3290
+config BACKPORTED_RT2500USB
+	tristate
+	default RT2500USB
+config BACKPORTED_RT73USB
+	tristate
+	default RT73USB
+config BACKPORTED_RT2800USB
+	tristate
+	default RT2800USB
+config BACKPORTED_RT2800USB_RT33XX
+	tristate
+	default RT2800USB_RT33XX
+config BACKPORTED_RT2800USB_RT35XX
+	tristate
+	default RT2800USB_RT35XX
+config BACKPORTED_RT2800USB_RT3573
+	tristate
+	default RT2800USB_RT3573
+config BACKPORTED_RT2800USB_RT53XX
+	tristate
+	default RT2800USB_RT53XX
+config BACKPORTED_RT2800USB_RT55XX
+	tristate
+	default RT2800USB_RT55XX
+config BACKPORTED_RT2800USB_UNKNOWN
+	tristate
+	default RT2800USB_UNKNOWN
+config BACKPORTED_RT2800SOC
+	tristate
+	default RT2800SOC
+config BACKPORTED_RT2800_LIB
+	tristate
+	default RT2800_LIB
+config BACKPORTED_RT2800_LIB_MMIO
+	tristate
+	default RT2800_LIB_MMIO
+config BACKPORTED_RT2X00_LIB_MMIO
+	tristate
+	default RT2X00_LIB_MMIO
+config BACKPORTED_RT2X00_LIB_PCI
+	tristate
+	default RT2X00_LIB_PCI
+config BACKPORTED_RT2X00_LIB_SOC
+	tristate
+	default RT2X00_LIB_SOC
+config BACKPORTED_RT2X00_LIB_USB
+	tristate
+	default RT2X00_LIB_USB
+config BACKPORTED_RT2X00_LIB
+	tristate
+	default RT2X00_LIB
+config BACKPORTED_RT2X00_LIB_FIRMWARE
+	tristate
+	default RT2X00_LIB_FIRMWARE
+config BACKPORTED_RT2X00_LIB_CRYPTO
+	tristate
+	default RT2X00_LIB_CRYPTO
+config BACKPORTED_RT2X00_LIB_LEDS
+	tristate
+	default RT2X00_LIB_LEDS
+config BACKPORTED_RT2X00_LIB_DEBUGFS
+	tristate
+	default RT2X00_LIB_DEBUGFS
+config BACKPORTED_RT2X00_DEBUG
+	tristate
+	default RT2X00_DEBUG
+config BACKPORTED_WLAN_VENDOR_REALTEK
+	tristate
+	default WLAN_VENDOR_REALTEK
+config BACKPORTED_RTL8180
+	tristate
+	default RTL8180
+config BACKPORTED_RTL8187
+	tristate
+	default RTL8187
+config BACKPORTED_RTL8187_LEDS
+	tristate
+	default RTL8187_LEDS
+config BACKPORTED_RTL_CARDS
+	tristate
+	default RTL_CARDS
+config BACKPORTED_RTL8192CE
+	tristate
+	default RTL8192CE
+config BACKPORTED_RTL8192SE
+	tristate
+	default RTL8192SE
+config BACKPORTED_RTL8192DE
+	tristate
+	default RTL8192DE
+config BACKPORTED_RTL8723AE
+	tristate
+	default RTL8723AE
+config BACKPORTED_RTL8723BE
+	tristate
+	default RTL8723BE
+config BACKPORTED_RTL8188EE
+	tristate
+	default RTL8188EE
+config BACKPORTED_RTL8192EE
+	tristate
+	default RTL8192EE
+config BACKPORTED_RTL8821AE
+	tristate
+	default RTL8821AE
+config BACKPORTED_RTL8192CU
+	tristate
+	default RTL8192CU
+config BACKPORTED_RTL8192DU
+	tristate
+	default RTL8192DU
+config BACKPORTED_RTLWIFI
+	tristate
+	default RTLWIFI
+config BACKPORTED_RTLWIFI_PCI
+	tristate
+	default RTLWIFI_PCI
+config BACKPORTED_RTLWIFI_USB
+	tristate
+	default RTLWIFI_USB
+config BACKPORTED_RTLWIFI_DEBUG
+	tristate
+	default RTLWIFI_DEBUG
+config BACKPORTED_RTL8192C_COMMON
+	tristate
+	default RTL8192C_COMMON
+config BACKPORTED_RTL8192D_COMMON
+	tristate
+	default RTL8192D_COMMON
+config BACKPORTED_RTL8723_COMMON
+	tristate
+	default RTL8723_COMMON
+config BACKPORTED_RTLBTCOEXIST
+	tristate
+	default RTLBTCOEXIST
+config BACKPORTED_RTL8XXXU
+	tristate
+	default RTL8XXXU
+config BACKPORTED_RTL8XXXU_UNTESTED
+	tristate
+	default RTL8XXXU_UNTESTED
+config BACKPORTED_RTW88
+	tristate
+	default RTW88
+config BACKPORTED_RTW88_CORE
+	tristate
+	default RTW88_CORE
+config BACKPORTED_RTW88_PCI
+	tristate
+	default RTW88_PCI
+config BACKPORTED_RTW88_SDIO
+	tristate
+	default RTW88_SDIO
+config BACKPORTED_RTW88_USB
+	tristate
+	default RTW88_USB
+config BACKPORTED_RTW88_8822B
+	tristate
+	default RTW88_8822B
+config BACKPORTED_RTW88_8822C
+	tristate
+	default RTW88_8822C
+config BACKPORTED_RTW88_8723X
+	tristate
+	default RTW88_8723X
+config BACKPORTED_RTW88_8703B
+	tristate
+	default RTW88_8703B
+config BACKPORTED_RTW88_8723D
+	tristate
+	default RTW88_8723D
+config BACKPORTED_RTW88_8821C
+	tristate
+	default RTW88_8821C
+config BACKPORTED_RTW88_8822BE
+	tristate
+	default RTW88_8822BE
+config BACKPORTED_RTW88_8822BS
+	tristate
+	default RTW88_8822BS
+config BACKPORTED_RTW88_8822BU
+	tristate
+	default RTW88_8822BU
+config BACKPORTED_RTW88_8822CE
+	tristate
+	default RTW88_8822CE
+config BACKPORTED_RTW88_8822CS
+	tristate
+	default RTW88_8822CS
+config BACKPORTED_RTW88_8822CU
+	tristate
+	default RTW88_8822CU
+config BACKPORTED_RTW88_8723DE
+	tristate
+	default RTW88_8723DE
+config BACKPORTED_RTW88_8723DS
+	tristate
+	default RTW88_8723DS
+config BACKPORTED_RTW88_8723CS
+	tristate
+	default RTW88_8723CS
+config BACKPORTED_RTW88_8723DU
+	tristate
+	default RTW88_8723DU
+config BACKPORTED_RTW88_8821CE
+	tristate
+	default RTW88_8821CE
+config BACKPORTED_RTW88_8821CS
+	tristate
+	default RTW88_8821CS
+config BACKPORTED_RTW88_8821CU
+	tristate
+	default RTW88_8821CU
+config BACKPORTED_RTW88_DEBUG
+	tristate
+	default RTW88_DEBUG
+config BACKPORTED_RTW88_DEBUGFS
+	tristate
+	default RTW88_DEBUGFS
+config BACKPORTED_RTW89
+	tristate
+	default RTW89
+config BACKPORTED_RTW89_CORE
+	tristate
+	default RTW89_CORE
+config BACKPORTED_RTW89_PCI
+	tristate
+	default RTW89_PCI
+config BACKPORTED_RTW89_8851B
+	tristate
+	default RTW89_8851B
+config BACKPORTED_RTW89_8852A
+	tristate
+	default RTW89_8852A
+config BACKPORTED_RTW89_8852B_COMMON
+	tristate
+	default RTW89_8852B_COMMON
+config BACKPORTED_RTW89_8852B
+	tristate
+	default RTW89_8852B
+config BACKPORTED_RTW89_8852BT
+	tristate
+	default RTW89_8852BT
+config BACKPORTED_RTW89_8852C
+	tristate
+	default RTW89_8852C
+config BACKPORTED_RTW89_8922A
+	tristate
+	default RTW89_8922A
+config BACKPORTED_RTW89_8851BE
+	tristate
+	default RTW89_8851BE
+config BACKPORTED_RTW89_8852AE
+	tristate
+	default RTW89_8852AE
+config BACKPORTED_RTW89_8852BE
+	tristate
+	default RTW89_8852BE
+config BACKPORTED_RTW89_8852BTE
+	tristate
+	default RTW89_8852BTE
+config BACKPORTED_RTW89_8852CE
+	tristate
+	default RTW89_8852CE
+config BACKPORTED_RTW89_8922AE
+	tristate
+	default RTW89_8922AE
+config BACKPORTED_RTW89_DEBUG
+	tristate
+	default RTW89_DEBUG
+config BACKPORTED_RTW89_DEBUGMSG
+	tristate
+	default RTW89_DEBUGMSG
+config BACKPORTED_RTW89_DEBUGFS
+	tristate
+	default RTW89_DEBUGFS
+config BACKPORTED_WLAN_VENDOR_RSI
+	tristate
+	default WLAN_VENDOR_RSI
+config BACKPORTED_RSI_91X
+	tristate
+	default RSI_91X
+config BACKPORTED_RSI_DEBUGFS
+	tristate
+	default RSI_DEBUGFS
+config BACKPORTED_RSI_SDIO
+	tristate
+	default RSI_SDIO
+config BACKPORTED_RSI_USB
+	tristate
+	default RSI_USB
+config BACKPORTED_RSI_COEX
+	tristate
+	default RSI_COEX
+config BACKPORTED_WLAN_VENDOR_SILABS
+	tristate
+	default WLAN_VENDOR_SILABS
+config BACKPORTED_WFX
+	tristate
+	default WFX
+config BACKPORTED_WLAN_VENDOR_ST
+	tristate
+	default WLAN_VENDOR_ST
+config BACKPORTED_CW1200
+	tristate
+	default CW1200
+config BACKPORTED_CW1200_WLAN_SDIO
+	tristate
+	default CW1200_WLAN_SDIO
+config BACKPORTED_CW1200_WLAN_SPI
+	tristate
+	default CW1200_WLAN_SPI
+config BACKPORTED_WLAN_VENDOR_SUMMIT
+	tristate
+	default WLAN_VENDOR_SUMMIT
+config BACKPORTED_LRDMWL
+	tristate
+	default LRDMWL
+config BACKPORTED_LRDMWL_PCIE
+	tristate
+	default LRDMWL_PCIE
+config BACKPORTED_LRDMWL_SDIO
+	tristate
+	default LRDMWL_SDIO
+config BACKPORTED_LRDMWL_USB
+	tristate
+	default LRDMWL_USB
+config BACKPORTED_LRDMWL_FIPS
+	tristate
+	default LRDMWL_FIPS
+config BACKPORTED_SUMMIT_MWIFIEX
+	tristate
+	default SUMMIT_MWIFIEX
+config BACKPORTED_SUMMIT_MWIFIEX_NX61X
+	tristate
+	default SUMMIT_MWIFIEX_NX61X
+config BACKPORTED_SUMMIT_NX61X_DEBUG_NONE
+	tristate
+	default SUMMIT_NX61X_DEBUG_NONE
+config BACKPORTED_SUMMIT_NX61X_DEBUG_DEFAULT
+	tristate
+	default SUMMIT_NX61X_DEBUG_DEFAULT
+config BACKPORTED_SUMMIT_NX61X_DEBUG_ALL
+	tristate
+	default SUMMIT_NX61X_DEBUG_ALL
+config BACKPORTED_SUMMIT_MWIFIEX_8997
+	tristate
+	default SUMMIT_MWIFIEX_8997
+config BACKPORTED_SUMMIT_MWIFIEX_8997_PCIE
+	tristate
+	default SUMMIT_MWIFIEX_8997_PCIE
+config BACKPORTED_SUMMIT_MWIFIEX_8997_SDIO
+	tristate
+	default SUMMIT_MWIFIEX_8997_SDIO
+config BACKPORTED_QCA_CLD_WLAN
+	tristate
+	default QCA_CLD_WLAN
+config BACKPORTED_QCACLD_WLAN_LFR3
+	tristate
+	default QCACLD_WLAN_LFR3
+config BACKPORTED_PRIMA_WLAN_OKC
+	tristate
+	default PRIMA_WLAN_OKC
+config BACKPORTED_PRIMA_WLAN_11AC_HIGH_TP
+	tristate
+	default PRIMA_WLAN_11AC_HIGH_TP
+config BACKPORTED_WLAN_FEATURE_11W
+	tristate
+	default WLAN_FEATURE_11W
+config BACKPORTED_WLAN_FEATURE_LPSS
+	tristate
+	default WLAN_FEATURE_LPSS
+config BACKPORTED_QCOM_VOWIFI_11R
+	tristate
+	default QCOM_VOWIFI_11R
+config BACKPORTED_WLAN_FEATURE_NAN
+	tristate
+	default WLAN_FEATURE_NAN
+config BACKPORTED_WLAN_FEATURE_NAN_DATAPATH
+	tristate
+	default WLAN_FEATURE_NAN_DATAPATH
+config BACKPORTED_QCOM_TDLS
+	tristate
+	default QCOM_TDLS
+config BACKPORTED_QCOM_LTE_COEX
+	tristate
+	default QCOM_LTE_COEX
+config BACKPORTED_WLAN_SYNC_TSF
+	tristate
+	default WLAN_SYNC_TSF
+config BACKPORTED_WLAN_OFFLOAD_PACKETS
+	tristate
+	default WLAN_OFFLOAD_PACKETS
+config BACKPORTED_QCA_WIFI_AUTOMOTIVE_CONC
+	tristate
+	default QCA_WIFI_AUTOMOTIVE_CONC
+config BACKPORTED_WLAN_UDP_RESPONSE_OFFLOAD
+	tristate
+	default WLAN_UDP_RESPONSE_OFFLOAD
+config BACKPORTED_WLAN_WOW_PULSE
+	tristate
+	default WLAN_WOW_PULSE
+config BACKPORTED_DPTRACE_ENABLE
+	tristate
+	default DPTRACE_ENABLE
+config BACKPORTED_WLAN_VENDOR_TI
+	tristate
+	default WLAN_VENDOR_TI
+config BACKPORTED_WL1251
+	tristate
+	default WL1251
+config BACKPORTED_WL1251_SPI
+	tristate
+	default WL1251_SPI
+config BACKPORTED_WL1251_SDIO
+	tristate
+	default WL1251_SDIO
+config BACKPORTED_WL12XX
+	tristate
+	default WL12XX
+config BACKPORTED_WL18XX
+	tristate
+	default WL18XX
+config BACKPORTED_CC33XX
+	tristate
+	default CC33XX
+config BACKPORTED_CC33XX_SPI
+	tristate
+	default CC33XX_SPI
+config BACKPORTED_CC33XX_SDIO
+	tristate
+	default CC33XX_SDIO
+config BACKPORTED_WLCORE
+	tristate
+	default WLCORE
+config BACKPORTED_WLCORE_SPI
+	tristate
+	default WLCORE_SPI
+config BACKPORTED_WLCORE_SDIO
+	tristate
+	default WLCORE_SDIO
+config BACKPORTED_WLAN_VENDOR_ZYDAS
+	tristate
+	default WLAN_VENDOR_ZYDAS
+config BACKPORTED_ZD1211RW
+	tristate
+	default ZD1211RW
+config BACKPORTED_ZD1211RW_DEBUG
+	tristate
+	default ZD1211RW_DEBUG
+config BACKPORTED_WLAN_VENDOR_QUANTENNA
+	tristate
+	default WLAN_VENDOR_QUANTENNA
+config BACKPORTED_QTNFMAC
+	tristate
+	default QTNFMAC
+config BACKPORTED_QTNFMAC_PCIE
+	tristate
+	default QTNFMAC_PCIE
+config BACKPORTED_MAC80211_HWSIM
+	tristate
+	default MAC80211_HWSIM
+config BACKPORTED_VIRT_WIFI
+	tristate
+	default VIRT_WIFI
+config BACKPORTED_SSB_POSSIBLE
+	tristate
+	default SSB_POSSIBLE
+config BACKPORTED_SSB
+	tristate
+	default SSB
+config BACKPORTED_SSB_SPROM
+	tristate
+	default SSB_SPROM
+config BACKPORTED_SSB_BLOCKIO
+	tristate
+	default SSB_BLOCKIO
+config BACKPORTED_SSB_PCIHOST_POSSIBLE
+	tristate
+	default SSB_PCIHOST_POSSIBLE
+config BACKPORTED_SSB_PCIHOST
+	tristate
+	default SSB_PCIHOST
+config BACKPORTED_SSB_B43_PCI_BRIDGE
+	tristate
+	default SSB_B43_PCI_BRIDGE
+config BACKPORTED_SSB_PCMCIAHOST_POSSIBLE
+	tristate
+	default SSB_PCMCIAHOST_POSSIBLE
+config BACKPORTED_SSB_PCMCIAHOST
+	tristate
+	default SSB_PCMCIAHOST
+config BACKPORTED_SSB_SDIOHOST_POSSIBLE
+	tristate
+	default SSB_SDIOHOST_POSSIBLE
+config BACKPORTED_SSB_SDIOHOST
+	tristate
+	default SSB_SDIOHOST
+config BACKPORTED_SSB_HOST_SOC
+	tristate
+	default SSB_HOST_SOC
+config BACKPORTED_SSB_SERIAL
+	tristate
+	default SSB_SERIAL
+config BACKPORTED_SSB_DRIVER_PCICORE_POSSIBLE
+	tristate
+	default SSB_DRIVER_PCICORE_POSSIBLE
+config BACKPORTED_SSB_DRIVER_PCICORE
+	tristate
+	default SSB_DRIVER_PCICORE
+config BACKPORTED_SSB_PCICORE_HOSTMODE
+	tristate
+	default SSB_PCICORE_HOSTMODE
+config BACKPORTED_SSB_DRIVER_MIPS
+	tristate
+	default SSB_DRIVER_MIPS
+config BACKPORTED_SSB_SFLASH
+	tristate
+	default SSB_SFLASH
+config BACKPORTED_SSB_EMBEDDED
+	tristate
+	default SSB_EMBEDDED
+config BACKPORTED_SSB_DRIVER_EXTIF
+	tristate
+	default SSB_DRIVER_EXTIF
+config BACKPORTED_SSB_DRIVER_GIGE
+	tristate
+	default SSB_DRIVER_GIGE
+config BACKPORTED_SSB_DRIVER_GPIO
+	tristate
+	default SSB_DRIVER_GPIO
+config BACKPORTED_BCMA_POSSIBLE
+	tristate
+	default BCMA_POSSIBLE
+config BACKPORTED_BCMA
+	tristate
+	default BCMA
+config BACKPORTED_BCMA_BLOCKIO
+	tristate
+	default BCMA_BLOCKIO
+config BACKPORTED_BCMA_HOST_PCI_POSSIBLE
+	tristate
+	default BCMA_HOST_PCI_POSSIBLE
+config BACKPORTED_BCMA_HOST_PCI
+	tristate
+	default BCMA_HOST_PCI
+config BACKPORTED_BCMA_HOST_SOC
+	tristate
+	default BCMA_HOST_SOC
+config BACKPORTED_BCMA_DRIVER_PCI
+	tristate
+	default BCMA_DRIVER_PCI
+config BACKPORTED_BCMA_DRIVER_PCI_HOSTMODE
+	tristate
+	default BCMA_DRIVER_PCI_HOSTMODE
+config BACKPORTED_BCMA_DRIVER_MIPS
+	tristate
+	default BCMA_DRIVER_MIPS
+config BACKPORTED_BCMA_PFLASH
+	tristate
+	default BCMA_PFLASH
+config BACKPORTED_BCMA_SFLASH
+	tristate
+	default BCMA_SFLASH
+config BACKPORTED_BCMA_NFLASH
+	tristate
+	default BCMA_NFLASH
+config BACKPORTED_BCMA_DRIVER_GMAC_CMN
+	tristate
+	default BCMA_DRIVER_GMAC_CMN
+config BACKPORTED_BCMA_DRIVER_GPIO
+	tristate
+	default BCMA_DRIVER_GPIO
+config BACKPORTED_BCMA_DEBUG
+	tristate
+	default BCMA_DEBUG
+config BACKPORTED_BT_INTEL
+	tristate
+	default BT_INTEL
+config BACKPORTED_BT_BCM
+	tristate
+	default BT_BCM
+config BACKPORTED_BT_RTL
+	tristate
+	default BT_RTL
+config BACKPORTED_BT_QCA
+	tristate
+	default BT_QCA
+config BACKPORTED_BT_MTK
+	tristate
+	default BT_MTK
+config BACKPORTED_BT_HCIBTUSB
+	tristate
+	default BT_HCIBTUSB
+config BACKPORTED_BT_HCIBTUSB_AUTOSUSPEND
+	tristate
+	default BT_HCIBTUSB_AUTOSUSPEND
+config BACKPORTED_BT_HCIBTUSB_POLL_SYNC
+	tristate
+	default BT_HCIBTUSB_POLL_SYNC
+config BACKPORTED_BT_HCIBTUSB_BCM
+	tristate
+	default BT_HCIBTUSB_BCM
+config BACKPORTED_BT_HCIBTUSB_INTEL
+	tristate
+	default BT_HCIBTUSB_INTEL
+config BACKPORTED_BT_HCIBTUSB_MTK
+	tristate
+	default BT_HCIBTUSB_MTK
+config BACKPORTED_BT_HCIBTUSB_RTL
+	tristate
+	default BT_HCIBTUSB_RTL
+config BACKPORTED_BT_HCIBTSDIO
+	tristate
+	default BT_HCIBTSDIO
+config BACKPORTED_BT_HCIUART
+	tristate
+	default BT_HCIUART
+config BACKPORTED_BT_HCIUART_SERDEV
+	tristate
+	default BT_HCIUART_SERDEV
+config BACKPORTED_BT_HCIUART_H4
+	tristate
+	default BT_HCIUART_H4
+config BACKPORTED_BT_HCIUART_NOKIA
+	tristate
+	default BT_HCIUART_NOKIA
+config BACKPORTED_BT_HCIUART_BCSP
+	tristate
+	default BT_HCIUART_BCSP
+config BACKPORTED_BT_HCIUART_ATH3K
+	tristate
+	default BT_HCIUART_ATH3K
+config BACKPORTED_BT_HCIUART_LL
+	tristate
+	default BT_HCIUART_LL
+config BACKPORTED_BT_HCIUART_3WIRE
+	tristate
+	default BT_HCIUART_3WIRE
+config BACKPORTED_BT_HCIUART_INTEL
+	tristate
+	default BT_HCIUART_INTEL
+config BACKPORTED_BT_HCIUART_BCM
+	tristate
+	default BT_HCIUART_BCM
+config BACKPORTED_BT_HCIUART_RTL
+	tristate
+	default BT_HCIUART_RTL
+config BACKPORTED_BT_HCIUART_QCA
+	tristate
+	default BT_HCIUART_QCA
+config BACKPORTED_BT_HCIUART_AG6XX
+	tristate
+	default BT_HCIUART_AG6XX
+config BACKPORTED_BT_HCIUART_MRVL
+	tristate
+	default BT_HCIUART_MRVL
+config BACKPORTED_BT_HCIUART_AML
+	tristate
+	default BT_HCIUART_AML
+config BACKPORTED_BT_HCIBCM203X
+	tristate
+	default BT_HCIBCM203X
+config BACKPORTED_BT_HCIBCM4377
+	tristate
+	default BT_HCIBCM4377
+config BACKPORTED_BT_HCIBPA10X
+	tristate
+	default BT_HCIBPA10X
+config BACKPORTED_BT_HCIBFUSB
+	tristate
+	default BT_HCIBFUSB
+config BACKPORTED_BT_HCIDTL1
+	tristate
+	default BT_HCIDTL1
+config BACKPORTED_BT_HCIBT3C
+	tristate
+	default BT_HCIBT3C
+config BACKPORTED_BT_HCIBLUECARD
+	tristate
+	default BT_HCIBLUECARD
+config BACKPORTED_BT_HCISS1USB
+	tristate
+	default BT_HCISS1USB
+config BACKPORTED_BT_HCIBTUART
+	tristate
+	default BT_HCIBTUART
+config BACKPORTED_BT_HCIVHCI
+	tristate
+	default BT_HCIVHCI
+config BACKPORTED_BT_TI
+	tristate
+	default BT_TI
+config BACKPORTED_BT_TI_SDIO
+	tristate
+	default BT_TI_SDIO
+config BACKPORTED_BT_TI_UART
+	tristate
+	default BT_TI_UART
+config BACKPORTED_BT_MRVL
+	tristate
+	default BT_MRVL
+config BACKPORTED_BT_MRVL_SDIO
+	tristate
+	default BT_MRVL_SDIO
+config BACKPORTED_BT_ATH3K
+	tristate
+	default BT_ATH3K
+config BACKPORTED_BT_MTKSDIO
+	tristate
+	default BT_MTKSDIO
+config BACKPORTED_BT_MTKUART
+	tristate
+	default BT_MTKUART
+config BACKPORTED_BT_QCOMSMD
+	tristate
+	default BT_QCOMSMD
+config BACKPORTED_BT_HCIRSI
+	tristate
+	default BT_HCIRSI
+config BACKPORTED_BT_VIRTIO
+	tristate
+	default BT_VIRTIO
+config BACKPORTED_BT_NXPUART
+	tristate
+	default BT_NXPUART
+config BACKPORTED_BT_INTEL_PCIE
+	tristate
+	default BT_INTEL_PCIE
+config BACKPORTED_BT_88W8997_MCHAR_USB
+	tristate
+	default BT_88W8997_MCHAR_USB
+config BACKPORTED_BT_88W8997_MCHAR_SDIO
+	tristate
+	default BT_88W8997_MCHAR_SDIO
+config BACKPORTED_STAGING
+	tristate
+	default STAGING
+config BACKPORTED_RTL8723BS
+	tristate
+	default RTL8723BS

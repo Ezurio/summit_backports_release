@@ -1,0 +1,144 @@
+#ifndef __BACKPORT_NET_SOCK_H
+#define __BACKPORT_NET_SOCK_H
+#include_next <net/sock.h>
+#include <linux/version.h>
+#include <linux/uaccess.h>
+
+#if LINUX_VERSION_IS_LESS(3,9,0)
+#include <backport/magic.h>
+
+#define sk_for_each3(__sk, node, list) \
+	hlist_for_each_entry(__sk, node, list, sk_node)
+
+#define sk_for_each_safe4(__sk, node, tmp, list) \
+	hlist_for_each_entry_safe(__sk, node, tmp, list, sk_node)
+
+#define sk_for_each2(__sk, list) \
+	hlist_for_each_entry(__sk, list, sk_node)
+
+#define sk_for_each_safe3(__sk, tmp, list) \
+	hlist_for_each_entry_safe(__sk, tmp, list, sk_node)
+
+#undef sk_for_each
+#define sk_for_each(...) \
+	macro_dispatcher(sk_for_each, __VA_ARGS__)(__VA_ARGS__)
+#undef sk_for_each_safe
+#define sk_for_each_safe(...) \
+	macro_dispatcher(sk_for_each_safe, __VA_ARGS__)(__VA_ARGS__)
+
+#endif
+
+#if LINUX_VERSION_IS_LESS(3,10,0)
+/*
+ * backport SOCK_SELECT_ERR_QUEUE -- see commit
+ * "net: add option to enable error queue packets waking select"
+ *
+ * Adding 14 to SOCK_QUEUE_SHRUNK will reach a bet that can't be
+ * set on older kernels, so sock_flag() will always return false.
+ */
+#define SOCK_SELECT_ERR_QUEUE (SOCK_QUEUE_SHRUNK + 14)
+#endif
+
+#ifndef sock_skb_cb_check_size
+#define sock_skb_cb_check_size(size) \
+	BUILD_BUG_ON((size) > FIELD_SIZEOF(struct sk_buff, cb))
+#endif
+
+#if LINUX_VERSION_IS_LESS(3,14,9) && \
+    !LINUX_VERSION_IN_RANGE(3,12,23, 3,13,0) && \
+    !LINUX_VERSION_IN_RANGE(3,10,45, 3,11,0)
+#define sk_capable(sk, cap) capable(cap)
+#endif
+
+#if LINUX_VERSION_IS_LESS(4,2,0)
+#define sk_alloc(net, family, priority, prot, kern) sk_alloc(net, family, priority, prot)
+#endif
+
+#if LINUX_VERSION_IS_LESS(4,5,0)
+#define sk_set_bit LINUX_BACKPORT(sk_set_bit)
+static inline void sk_set_bit(int nr, struct sock *sk)
+{
+	set_bit(nr, &sk->sk_socket->flags);
+}
+#endif /* < 4.5 */
+
+#if LINUX_VERSION_IS_LESS(4,5,0)
+#define sk_clear_bit LINUX_BACKPORT(sk_clear_bit)
+static inline void sk_clear_bit(int nr, struct sock *sk)
+{
+	clear_bit(nr, &sk->sk_socket->flags);
+}
+#endif /* < 4.5 */
+
+#if LINUX_VERSION_IS_LESS(4,16,0)
+#define sk_pacing_shift_update LINUX_BACKPORT(sk_pacing_shift_update)
+static inline void sk_pacing_shift_update(struct sock *sk, int val)
+{
+#if LINUX_VERSION_IS_GEQ(4,15,0)
+	if (!sk || !sk_fullsock(sk) || sk->sk_pacing_shift == val)
+		return;
+	sk->sk_pacing_shift = val;
+#endif /* >= 4.15 */
+}
+#endif /* < 4.16 */
+
+#if LINUX_VERSION_IS_LESS(5,9,0)
+#define copy_from_sockptr(a,b,c) copy_from_user(a,b,c)
+#define copy_to_sockptr(a,b,c) copy_to_user(a,b,c)
+#define sockptr_t char __user *
+#endif
+
+#if LINUX_VERSION_IS_LESS(5,9,0)
+#define copy_struct_from_sockptr(a,b,c,d) copy_struct_from_user(a,b,c,d)
+#elif LINUX_VERSION_IS_LESS(6,7,0)
+#define copy_struct_from_sockptr LINUX_BACKPORT(copy_struct_from_sockptr)
+static inline int copy_struct_from_sockptr(void *dst, size_t ksize,
+	sockptr_t src, size_t usize)
+{
+	size_t size = min(ksize, usize);
+	size_t rest = max(ksize, usize) - size;
+
+	if (!sockptr_is_kernel(src))
+		return copy_struct_from_user(dst, ksize, src.user, size);
+
+	if (usize < ksize) {
+		memset(dst + size, 0, rest);
+	} else if (usize > ksize) {
+		char *p = src.kernel;
+
+		while (rest--) {
+			if (*p++)
+				return -E2BIG;
+		}
+	}
+	memcpy(dst, src.kernel, size);
+	return 0;
+}
+#endif
+
+#if LINUX_VERSION_IS_LESS(6,8,0)
+#define copy_safe_from_sockptr LINUX_BACKPORT(copy_safe_from_sockptr)
+static inline int copy_safe_from_sockptr(void *dst, size_t ksize,
+    sockptr_t optval, unsigned int optlen)
+{
+    if (optlen < ksize)
+        return -EINVAL;
+    if (copy_from_sockptr(dst, optval, ksize))
+        return -EFAULT;
+    return 0;
+}
+#endif /* < 6.8 */
+
+#if LINUX_VERSION_IS_LESS(5,14,0)
+static inline void backport_sk_error_report(struct sock *sk)
+{
+	sk->sk_error_report(sk);
+}
+#define sk_error_report(sk) LINUX_BACKPORT(sk_error_report(sk))
+#endif /* <= 5.14 */
+
+#if LINUX_VERSION_IS_LESS(5,19,0)
+#define sock_recv_cmsgs(a,b,c) sock_recv_ts_and_drops(a,b,c)
+#endif
+
+#endif /* __BACKPORT_NET_SOCK_H */
