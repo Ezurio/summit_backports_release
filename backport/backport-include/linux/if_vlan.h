@@ -1,0 +1,62 @@
+#ifndef __BACKPORT_LINUX_IF_VLAN_H_
+#define __BACKPORT_LINUX_IF_VLAN_H_
+#include_next <linux/if_vlan.h>
+
+#if LINUX_VERSION_IS_LESS(3,10,0)
+#define vlan_insert_tag(__skb, __vlan_proto, __vlan_tci)	vlan_insert_tag(__skb, __vlan_tci)
+#define __vlan_put_tag(__skb, __vlan_proto, __vlan_tci)		__vlan_put_tag(__skb, __vlan_tci)
+#define vlan_put_tag(__skb, __vlan_proto, __vlan_tci)		vlan_put_tag(__skb, __vlan_tci)
+#define __vlan_hwaccel_put_tag(__skb, __vlan_proto, __vlan_tag)	__vlan_hwaccel_put_tag(__skb, __vlan_tag)
+
+#define __vlan_find_dev_deep(__real_dev, __vlan_proto, __vlan_id) __vlan_find_dev_deep(__real_dev, __vlan_id)
+
+#endif
+
+#ifndef VLAN_PRIO_MASK
+#define VLAN_PRIO_MASK		0xe000 /* Priority Code Point */
+#endif
+
+#ifndef VLAN_PRIO_SHIFT
+#define VLAN_PRIO_SHIFT		13
+#endif
+
+#if LINUX_VERSION_IS_LESS(3,16,0)
+#define __vlan_find_dev_deep_rcu(real_dev, vlan_proto, vlan_id) __vlan_find_dev_deep(real_dev, vlan_proto, vlan_id)
+#endif
+
+#ifndef skb_vlan_tag_present
+#define skb_vlan_tag_present(__skb)	((__skb)->vlan_tci & VLAN_TAG_PRESENT)
+#endif
+
+#ifndef skb_vlan_tag_get
+#define skb_vlan_tag_get(__skb)		((__skb)->vlan_tci & ~VLAN_TAG_PRESENT)
+#endif
+
+#ifndef skb_vlan_tag_get_id
+#define skb_vlan_tag_get_id(__skb)	((__skb)->vlan_tci & VLAN_VID_MASK)
+#endif
+
+#ifndef VLAN_N_VID
+#define VLAN_N_VID 4096
+#endif
+
+#if LINUX_VERSION_IS_LESS(5,7,0) && \
+	!LINUX_VERSION_IN_RANGE(5,4,53, 5,5,0) && \
+	!LINUX_VERSION_IN_RANGE(4,19,134, 4,20,0) && \
+	!LINUX_VERSION_IN_RANGE(4,14,212, 4,15,0) && \
+	!LINUX_VERSION_IN_RANGE(4,9,248, 4,10,0) && \
+	!LINUX_VERSION_IN_RANGE(4,4,248, 4,5,0)
+
+#define skb_protocol LINUX_BACKPORT(skb_protocol)
+static inline __be16 skb_protocol(struct sk_buff *skb, bool skip_vlan)
+{
+#if LINUX_VERSION_IS_GEQ(3,10,0)
+	if (!skip_vlan)
+		return skb_vlan_tag_present(skb) ? skb->vlan_proto : skb->protocol;
+#endif
+
+	return vlan_get_protocol(skb);
+}
+#endif
+
+#endif /* __BACKPORT_LINUX_IF_VLAN_H_ */

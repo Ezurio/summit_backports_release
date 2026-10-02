@@ -1,0 +1,217 @@
+#ifndef __BACKPORT_LINUX_CLK_H
+#define __BACKPORT_LINUX_CLK_H
+#include_next <linux/clk.h>
+#include <linux/device.h>
+#include <linux/version.h>
+
+/*
+ * commit 93abe8e4 - we only backport the non CONFIG_COMMON_CLK
+ * case as the CONFIG_COMMON_CLK case requires arch support. By
+ * using the backport_ namespace for older kernels we force usage
+ * of these helpers and that's required given that 3.5 added some
+ * of these helpers expecting a few exported symbols for the non
+ * CONFIG_COMMON_CLK case. The 3.5 kernel is not supported as
+ * per kernel.org so we don't send a fix upstream for that.
+ */
+#if LINUX_VERSION_IS_LESS(3,6,0)
+
+#if !defined(CONFIG_COMMON_CLK) && !defined(CONFIG_HAVE_CLK)
+
+/*
+ * Whoopsie!
+ *
+ * clk_enable() and clk_disable() have been left without
+ * a nop export symbols when !CONFIG_COMMON_CLK since its
+ * introduction on v2.6.16, but fixed until 3.6.
+ */
+#define clk_enable LINUX_BACKPORT(clk_enable)
+static inline int clk_enable(struct clk *clk)
+{
+	return 0;
+}
+
+#define clk_disable LINUX_BACKPORT(clk_disable)
+static inline void clk_disable(struct clk *clk) {}
+
+#define clk_prepare_enable LINUX_BACKPORT(clk_prepare_enable)
+static inline int clk_prepare_enable(struct clk *clk)
+{
+	return 0;
+}
+
+#define clk_disable_unprepare LINUX_BACKPORT(clk_disable_unprepare)
+static inline void clk_disable_unprepare(struct clk *clk) { }
+
+#define clk_get LINUX_BACKPORT(clk_get)
+static inline struct clk *clk_get(struct device *dev, const char *id)
+{
+	return NULL;
+}
+
+#define devm_clk_get LINUX_BACKPORT(devm_clk_get)
+static inline struct clk *devm_clk_get(struct device *dev, const char *id)
+{
+	return NULL;
+}
+
+#define clk_put LINUX_BACKPORT(clk_put)
+static inline void clk_put(struct clk *clk) {}
+
+#define devm_clk_put LINUX_BACKPORT(devm_clk_put)
+static inline void devm_clk_put(struct device *dev, struct clk *clk) {}
+
+#define clk_get_rate LINUX_BACKPORT(clk_get_rate)
+static inline unsigned long clk_get_rate(struct clk *clk)
+{
+	return 0;
+}
+
+#define clk_set_rate LINUX_BACKPORT(clk_set_rate)
+static inline int clk_set_rate(struct clk *clk, unsigned long rate)
+{
+	return 0;
+}
+
+#define clk_round_rate LINUX_BACKPORT(clk_round_rate)
+static inline long clk_round_rate(struct clk *clk, unsigned long rate)
+{
+	return 0;
+}
+
+#define clk_set_parent LINUX_BACKPORT(clk_set_parent)
+static inline int clk_set_parent(struct clk *clk, struct clk *parent)
+{
+	return 0;
+}
+
+#define clk_get_parent LINUX_BACKPORT(clk_get_parent)
+static inline struct clk *clk_get_parent(struct clk *clk)
+{
+	return NULL;
+}
+
+#else /* !defined(CONFIG_COMMON_CLK) && !defined(CONFIG_HAVE_CLK) */
+
+#if LINUX_VERSION_IS_LESS(3,5,0)
+
+#define devm_clk_get LINUX_BACKPORT(devm_clk_get)
+static inline struct clk *devm_clk_get(struct device *dev, const char *id)
+{
+	return NULL;
+}
+
+#define devm_clk_put LINUX_BACKPORT(devm_clk_put)
+static inline void devm_clk_put(struct device *dev, struct clk *clk) {}
+
+#endif /* LINUX_VERSION_IS_LESS(3,5,0) */
+
+#if LINUX_VERSION_IS_LESS(3,2,0)
+static inline int clk_prepare_enable(struct clk *clk)
+{
+	return clk_enable(clk);
+}
+
+/* clk_disable_unprepare helps cases using clk_disable in non-atomic context. */
+static inline void clk_disable_unprepare(struct clk *clk)
+{
+	clk_disable(clk);
+}
+
+#elif LINUX_VERSION_IS_LESS(3,3,0)
+
+#define clk_prepare_enable LINUX_BACKPORT(clk_prepare_enable)
+/* clk_prepare_enable helps cases using clk_enable in non-atomic context. */
+static inline int clk_prepare_enable(struct clk *clk)
+{
+	int ret;
+
+	ret = clk_prepare(clk);
+	if (ret)
+		return ret;
+	ret = clk_enable(clk);
+	if (ret)
+		clk_unprepare(clk);
+
+	return ret;
+}
+
+#define clk_disable_unprepare LINUX_BACKPORT(clk_disable_unprepare)
+/* clk_disable_unprepare helps cases using clk_disable in non-atomic context. */
+static inline void clk_disable_unprepare(struct clk *clk)
+{
+	clk_disable(clk);
+	clk_unprepare(clk);
+}
+#endif /* LINUX_VERSION_IS_LESS(3,2,0) */
+
+#endif /* !defined(CONFIG_COMMON_CLK) && !defined(CONFIG_HAVE_CLK) */
+
+#endif /* LINUX_VERSION_IS_LESS(3,6,0) */
+
+#if LINUX_VERSION_IS_LESS(4,0,0)
+static inline bool clk_is_match(const struct clk *p, const struct clk *q)
+{
+	return p == q;
+}
+#endif /* #if LINUX_VERSION_IS_LESS(4,0,0) */
+
+#if LINUX_VERSION_IS_LESS(5,1,0)
+
+#define devm_clk_get_optional LINUX_BACKPORT(devm_clk_get_optional)
+static inline
+struct clk *devm_clk_get_optional(struct device *dev, const char *id)
+{
+	struct clk *clk = devm_clk_get(dev, id);
+
+	if (clk == ERR_PTR(-ENOENT))
+		return NULL;
+
+	return clk;
+}
+
+#endif /* < 5.1 */
+
+#if LINUX_VERSION_IS_LESS(6,12,0)
+#define devm_clk_get_optional_enabled_with_rate \
+	LINUX_BACKPORT(devm_clk_get_optional_enabled_with_rate)
+static void bp_clk_disable_unprepare(void *data)
+{
+	struct clk *clk = data;
+
+	clk_disable_unprepare(clk);
+}
+
+static inline struct clk *devm_clk_get_optional_enabled_with_rate(
+	struct device *dev, const char *id, unsigned long rate)
+{
+	struct clk *clk;
+	int ret;
+
+	clk = devm_clk_get_optional(dev, id);
+	if (IS_ERR(clk) || !clk)
+		return clk;
+
+	if (rate) {
+		ret = clk_set_rate(clk, rate);
+		if (ret)
+			goto out_put_clk;
+	}
+
+	ret = clk_prepare_enable(clk);
+	if (ret)
+		goto out_put_clk;
+
+	ret = devm_add_action_or_reset(dev, bp_clk_disable_unprepare, clk);
+	if (ret) {
+		clk_disable_unprepare(clk);
+		goto out_put_clk;
+	}
+
+	return clk;
+
+out_put_clk:
+	devm_clk_put(dev, clk);
+	return ERR_PTR(ret);
+}
+#endif
+#endif /* __BACKPORT_LINUX_CLK_H */

@@ -1,0 +1,36 @@
+#ifndef __BACKPORT_PROC_FS_H
+#define __BACKPORT_PROC_FS_H
+#include_next <linux/proc_fs.h>
+#include <linux/version.h>
+
+#if LINUX_VERSION_IS_LESS(3,10,0)
+
+#ifdef CONFIG_PROC_FS
+/*
+ * backport of:
+ * procfs: new helper - PDE_DATA(inode)
+ */
+#define PDE_DATA LINUX_BACKPORT(PDE_DATA)
+static inline void *PDE_DATA(const struct inode *inode)
+{
+	return PROC_I(inode)->pde->data;
+}
+extern void proc_set_size(struct proc_dir_entry *, loff_t);
+extern void proc_set_user(struct proc_dir_entry *, kuid_t, kgid_t);
+#else
+#define PDE_DATA LINUX_BACKPORT(PDE_DATA)
+static inline void *PDE_DATA(const struct inode *inode) {BUG(); return NULL;}
+static inline void proc_set_size(struct proc_dir_entry *de, loff_t size) {}
+static inline void proc_set_user(struct proc_dir_entry *de, kuid_t uid, kgid_t gid) {}
+#endif /* CONFIG_PROC_FS */
+
+#endif /* LINUX_VERSION_IS_LESS(3,10,0) */
+
+
+#if LINUX_VERSION_IS_EQU(5,14,0) && RHEL_RELEASE_IS_GEQ(9,1)
+/* Do nothing, backported by RHEL */
+#elif LINUX_VERSION_IS_LESS(5,17,0)
+#define pde_data(a) PDE_DATA(a)
+#endif
+
+#endif /* __BACKPORT_PROC_FS_H */

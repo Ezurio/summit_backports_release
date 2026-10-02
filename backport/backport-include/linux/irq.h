@@ -1,0 +1,23 @@
+#ifndef __BACKPORT_LINUX_IRQ_H
+#define __BACKPORT_LINUX_IRQ_H
+#include_next <linux/irq.h>
+
+#ifdef CONFIG_HAVE_GENERIC_HARDIRQS
+#if LINUX_VERSION_IS_LESS(2,6,39)
+static inline u32 irqd_get_trigger_type(struct irq_data *d)
+{
+	return 0;
+}
+#endif
+
+#if LINUX_VERSION_IS_LESS(3,11,0)
+#define irq_get_trigger_type LINUX_BACKPORT(irq_get_trigger_type)
+static inline u32 irq_get_trigger_type(unsigned int irq)
+{
+	struct irq_data *d = irq_get_irq_data(irq);
+	return d ? irqd_get_trigger_type(d) : 0;
+}
+#endif
+#endif /* CONFIG_HAVE_GENERIC_HARDIRQS */
+
+#endif /* __BACKPORT_LINUX_IRQ_H */

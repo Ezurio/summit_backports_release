@@ -1,0 +1,47 @@
+#ifndef __BACKPORT_LINUX_MMC_SDIO_H
+#define __BACKPORT_LINUX_MMC_SDIO_H
+#include <linux/version.h>
+#include_next <linux/mmc/sdio.h>
+
+/* backports b4625dab */
+#ifndef SDIO_CCCR_REV_3_00
+#define  SDIO_CCCR_REV_3_00    3       /* CCCR/FBR Version 3.00 */
+#endif
+#ifndef SDIO_SDIO_REV_3_00
+#define  SDIO_SDIO_REV_3_00    4       /* SDIO Spec Version 3.00 */
+#endif
+
+#ifndef SDIO_BUS_ECSI
+#define  SDIO_BUS_ECSI		0x20	/* Enable continuous SPI interrupt */
+#endif
+#ifndef SDIO_BUS_SCSI
+#define  SDIO_BUS_SCSI		0x40	/* Support continuous SPI interrupt */
+#endif
+
+#ifndef SDIO_BUS_WIDTH_MASK
+#define  SDIO_BUS_WIDTH_MASK	0x03	/* data bus width setting */
+#endif
+
+#ifndef SDIO_SPEED_BSS_SHIFT
+#define  SDIO_SPEED_BSS_SHIFT	1
+#endif
+#ifndef SDIO_SPEED_BSS_MASK
+#define  SDIO_SPEED_BSS_MASK	(7<<SDIO_SPEED_BSS_SHIFT)
+#endif
+#ifndef SDIO_SPEED_SDR12
+#define  SDIO_SPEED_SDR12	(0<<SDIO_SPEED_BSS_SHIFT)
+#endif
+#ifndef SDIO_SPEED_SDR25
+#define  SDIO_SPEED_SDR25	(1<<SDIO_SPEED_BSS_SHIFT)
+#endif
+#ifndef SDIO_SPEED_SDR50
+#define  SDIO_SPEED_SDR50	(2<<SDIO_SPEED_BSS_SHIFT)
+#endif
+#ifndef SDIO_SPEED_SDR104
+#define  SDIO_SPEED_SDR104	(3<<SDIO_SPEED_BSS_SHIFT)
+#endif
+#ifndef SDIO_SPEED_DDR50
+#define  SDIO_SPEED_DDR50	(4<<SDIO_SPEED_BSS_SHIFT)
+#endif
+
+#endif /* __BACKPORT_LINUX_MMC_SDIO_H */

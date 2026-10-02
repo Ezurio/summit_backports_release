@@ -1,0 +1,34 @@
+# Cryptographic API Configuration
+#
+
+config BPAUTO_CRYPTO_CMAC
+	tristate
+	depends on m
+	depends on CRYPTO
+	depends on CRYPTO_HASH
+	depends on CRYPTO_MANAGER
+
+config BPAUTO_BUILD_CRYPTO_CMAC
+	bool
+	default y if BPAUTO_CRYPTO_CMAC
+	depends on KERNEL_3_10
+	depends on !CRYPTO_CMAC
+
+config BPAUTO_CRYPTO_ECDH
+	tristate
+	depends on m
+	depends on CRYPTO
+
+config BPAUTO_BUILD_CRYPTO_ECDH
+	bool
+	default y if BPAUTO_CRYPTO_ECDH
+	depends on KERNEL_4_8
+	depends on !CRYPTO_ECDH
+
+config BPAUTO_CRYPTO_SKCIPHER
+	bool
+	depends on CRYPTO
+	depends on CRYPTO_MANAGER
+	depends on KERNEL_4_3
+	default y if MAC80211
+	default y if QCA_CLD_WLAN

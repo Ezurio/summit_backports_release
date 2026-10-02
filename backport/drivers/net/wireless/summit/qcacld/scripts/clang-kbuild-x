@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Strip GCC-only flags that clang doesn't understand when building
+# out-of-tree modules against a GCC-compiled kernel.
+
+args=()
+for arg in "$@"; do
+    case "$arg" in
+        -mpreferred-stack-boundary=*|-mindirect-branch*|-fmin-function-alignment=*|-fconserve-stack|-mrecord-mcount|-fsanitize=bounds-strict)
+            ;;
+        -Wno-alloc-size-larger-than|-Wimplicit-fallthrough=*|-Wno-maybe-uninitialized)
+            ;;
+        *)
+            args+=("$arg")
+            ;;
+    esac
+done
+
+exec clang -Wno-duplicate-decl-specifier -Wno-frame-address "${args[@]}"
